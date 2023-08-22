@@ -191,29 +191,39 @@ function swipe() {
     //drag/swipe up
     if (endY - initialY < -50) {
         if (slide < 4) {
-            slide++;
-            current -= window.innerHeight;
+            if (slide !==2 || pageScrollDelay >= pagecontentimages.offsetHeight-pagecontent.offsetHeight) {
 
-            console.log(slide, current);
+                slide++;
+                current -= window.innerHeight;
 
-            //gsap.to(".content", {y:"-="+window.innerHeight, duration: 1, ease: "power4"});
-            gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+                //console.log(slide, current);
+                console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
-            displayHeader();
+
+                //gsap.to(".content", {y:"-="+window.innerHeight, duration: 1, ease: "power4"});
+                gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+
+                displayHeader();
+            }
 
 
 
         }
     } else if (endY - initialY >50) {
         if (slide > 0) {
-            slide--;
-            current += window.innerHeight;
+            if (slide !==2 || pageScrollDelay == 0) {
 
-            console.log(slide, current);
-            //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
-            gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+                slide--;
+                current += window.innerHeight;
 
-            displayHeader();
+                //console.log(slide, current);
+                console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+
+                //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
+                gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+
+                displayHeader();
+            }
 
 
 
