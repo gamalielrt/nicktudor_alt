@@ -238,7 +238,10 @@ function swipe() {
 }
 
 function moveTouch(e) {
-    //e.preventDefault();
+    if (slide !== 2) {
+        e.preventDefault();
+        console.log("prevented default")
+    }
 }
 
 
