@@ -21,6 +21,7 @@ const appHeight = () => {
     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
     current = -slide * window.innerHeight;
     content.style.transform = `translateY(${current}px)`;
+    console.log("appHeight", appHeight);
 }
 window.addEventListener('resize',appHeight)
 appHeight();
