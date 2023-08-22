@@ -102,6 +102,8 @@ function wheelFunc (e) {
         //swipeup
         if (e.deltaY > 60 && slide < 4) {
             if (slide !==2 || pageScrollDelay >= pagecontentimages.offsetHeight-pagecontent.offsetHeight) {
+                console.log("swipe up")
+
                 canSwipe = false;
                 current -= window.innerHeight;
 
@@ -126,6 +128,8 @@ function wheelFunc (e) {
         //swipe down
         if (e.deltaY < -60 && slide > 0) {
             if (slide !==2 || pageScrollDelay == 0) {
+                console.log("swipe down")
+
 
                 canSwipe = false;
                 current += window.innerHeight;
@@ -144,6 +148,8 @@ function wheelFunc (e) {
                 displayHeader();
 
             }
+
+            
         }
 
 
@@ -232,7 +238,7 @@ function swipe() {
 }
 
 function moveTouch(e) {
-    e.preventDefault();
+    //e.preventDefault();
 }
 
 
