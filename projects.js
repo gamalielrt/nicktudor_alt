@@ -131,6 +131,13 @@ projectList.newProject('008',
                     'right'
 );
 
+function alertClick (projectIndex) {
+    alert(projectIndex);
+    console.log(projectIndex)
+}
+
+
+
 
 function displayProjects() {
 
@@ -149,7 +156,7 @@ function displayProjects() {
 
     for (let i=0; i<=7; i++ ) {
         
-        document.getElementById("projectscontainer").innerHTML += '<div class = "project" id ="project'+ i +'" ><img class ="projectThumbImg" id = "projectThumbImg'+ i +'" src ="assets/projects/projectthumbnails/'+ projectList.projects[i].image +'" ></div>';
+        document.getElementById("projectscontainer").innerHTML += '<div class = "project" id ="project'+ i +'" ><img class ="projectThumbImg" id = "projectThumbImg'+ i +'" src ="assets/projects/projectthumbnails/'+ projectList.projects[i].image +'" onClick = "alertClick('+ i +')"></div>';
 
         if (deviceType.includes("computer") || window.innerWidth > 550) {
 
