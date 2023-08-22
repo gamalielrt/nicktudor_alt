@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIPE GALLERY</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>    </head>
+
+
+    <div id="header">
+        <div id = "menubar">
+            <div id = "menubarcontent">
+                <img id = "menubarlogo" src = "assets/logos/NICK-TUDOR-YELLOW.png">
+                <div id = "menuicon" >
+                    <div id="hamburgericon" onclick="clickMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div id = "menu">
+
+                <div id="projectcatagorybtns">
+                    Architecture<br>
+                    Art<br>
+                    Furniture<br>
+                    Interior<br>
+                </div>
+                <div id="sustainabilitybtn">
+                    Sustainability<br>
+                </div>
+                <div id="informationbtn">
+                    Information
+                </div>
+        
+            </div>
+    
+        </div>
+
+    </div>
+
+    <main>
+        <div id = "slideshowdiv">
+            <div id = "slideshow"></div>
+        </div>
+
+        <div class="content">
+            
+            <section id ="landingpage">
+                <div id = "startlogo">
+                    <img id="startlogoLOGOimage" src="assets/logos/NICK-TUDOR-LOGO-OFF-WHITE.png">
+                </div>
+    
+            </section>
+
+
+            <section id ="homepage">
+                <div id="homepagecontent" class = "card">
+                    <div id="homepageNICKTUDOR"><img id="homepageNICKTUDORimage" src="assets/logos/NICK-TUDOR-RED.png"></div><br>
+                    <p>I’m a designer and carpenter based in London and Essex. I design and make bespoke furniture, buildings, architectural features, and collaborate with other architects, artists, designers and private clients, to realise projects of various scales. My work can be found in museums, galleries and other public institutions in addition to domestic settings.</p> 
+                    <div id="homepageLOGO"><img id="homepageLOGOimage" src="assets/logos/FACE-RED.png"></div>
+                    <p>I am driven by a desire to contribute positive change in the built environment; to create sustainable outcomes of lasting quality. </p>
+                </div>
+    
+            </section>
+            <section id ="mainsite">
+                <div id = "pagecontent">
+
+                    <div id="projects">
+                        <div id = "projectscontainer">
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+            <section id ="sustainabilitypage">
+                <div id="sustainabilitycontent">
+                    <img id = "sustainabilityimage" src = "assets/illustrations/SAWING-1White.png">
+                </div>
+
+            </section>
+
+            <section id ="infopage">
+                <div id = "infocontent">
+                    <div id = "infoslideshowwrap">
+                        <div id = "infoslideshowcontainer">
+                            <img id="infoslideshow" src="assets/info/info_01.jpeg">
+                        </div>
+                    </div>
+                    <br>
+                    <p id = "infotext1">I spend most of my week in my workshop based on the Dengie Peninsula, Essex. An hour and a half from London, visits can be arranged by appointment. 
+                    <br><br>
+                    For enquires please contact:
+                    <br>
+                    e: info@nick-tudor.com
+                    <br>
+                    t: +44 (0) 7769 553127
+                    <br><br>
+                    Registered business address:
+                    <br>
+                    33 Yarnfield Square
+                    London
+                    SE15 5JD</p>
+
+                </div>
+                <img id="infoillustration" src = "assets/illustrations/SAWING-1White.png">
+                <p id = "infotext2">© Nick Tudor 2023
+                    <br>
+                    Identity: Leomi Sadler
+                    <br>
+                    Website: Gamaliel Rendle Traynor
+                </p>
+            </div>
+
+            </section>
+
+          
+        </div>
+    </main>
+    
+    <script src="app.js"></script>
+    <script>
+
+
+            var mainsite = document.getElementById("mainsite");
+            var mainsitecontent = document.getElementById("mainsitecontent");
+            var homepagecontent = document.getElementById("homepagecontent");
+            var projects = document.getElementById("projects");
+            var projectscontainer = document.getElementById("projectscontainer");
+            var sustainabilitypage = document.getElementById("sustainabilitypage");
+            var infopage = document.getElementById("infopage");
+            var menu = document.getElementById("menu");
+            var menuDisplayed = false;
+
+            var deviceType = ''; 
+
+            function detectScreenWidth () {
+                if (window.innerWidth > 550) {
+                    deviceType = 'computer';
+                    homepagecontent.style.fontSize = '19px'
+                    homepagecontent.style.paddingTop = '12%';
+                    homepagecontent.style.paddingLeft = '26%';
+                    homepagecontent.style.paddingRight = '26%';
+
+                    document.getElementById("homepageNICKTUDORimage").style.width = '150px';
+                    document.getElementById("homepageLOGOimage").style.width = '140px';
+                    document.getElementById("menubarlogo").style.width = '150px';
+
+
+
+                } else {
+                    deviceType = 'phone';
+                    homepagecontent.style.fontSize = '14px'
+                    homepagecontent.style.paddingTop = '20%';
+                    homepagecontent.style.paddingLeft = '20%';
+                    homepagecontent.style.paddingRight = '20%';
+
+
+                    document.getElementById("homepageNICKTUDORimage").style.width = '150px';
+                    document.getElementById("homepageLOGOimage").style.width = '100px';
+                    document.getElementById("menubarlogo").style.width = '140px';
+
+
+                }
+                //console.log(deviceType);
+            }
+
+            detectScreenWidth();
+
+
+
+
+
+
+
+
+
+
+
+
+            $(document).ready(function(){
+                $('#hamburgericon').click(function(){
+                    $(this).toggleClass('open');
+                });
+            });
+
+
+            function clickMenu () {
+                if (menuDisplayed == false) {
+
+                    //console.log("menu display")
+
+                    menu.style.right = "0px";
+
+                    menuDisplayed = true;
+
+                } else if (menuDisplayed == true) {
+
+                    //console.log("menu no display")
+
+
+                    menu.style.right = "-400px";
+
+                    menuDisplayed = false;
+
+
+
+                }
+            }
+
+    </script>
+
+<script src="./projects.js"></script>
+
+</body>
+</html>
