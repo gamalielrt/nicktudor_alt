@@ -122,7 +122,6 @@ function wheelFunc (e) {
     
 
             }
-
         }
         
         //swipe down
@@ -242,6 +241,12 @@ function moveTouch(e) {
         e.preventDefault();
         console.log("prevented default")
     }
+    //if (slide == 2) {
+    //    if (pagecontent.scrollTop == 0 || pagecontent.scrollTop >= pagecontentimages.offsetHeight-pagecontent.offsetHeight) {
+    //        e.preventDefault();
+    //        console.log("prevented default")
+    //    }
+    //}
 }
 
 

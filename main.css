@@ -133,7 +133,7 @@ section {
     width: 100vw;
     height: 100vh;
 
-    background: url("assets/homepage/homepage_01.jpg") no-repeat center fixed;     
+    /*background: url("assets/homepage/homepage_0.jpg") no-repeat center fixed;*/
     background-size: cover;
     background-attachment: scroll;
 
@@ -142,6 +142,32 @@ section {
 
 
     opacity: 100%;
+}
+
+.slideshowImg {
+    position:fixed;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 100%;
+
+    /*background: url("assets/homepage/homepage_0.jpg") no-repeat center fixed;*/
+
+    background-size: cover;
+    background-attachment: scroll;
+    background: no-repeat center fixed;
+    transition: opacity 3s ;
+
+
+
+}
+
+#slideshowImg0 {
+    /*background: url("assets/homepage/homepage_0.jpg") no-repeat center fixed;*/
+
+
+
 }
 
 

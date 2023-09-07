@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NICK TUDOR</title>
+    <title>NICK TUDOR ALT</title>
 </head>
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
@@ -51,7 +51,15 @@
 
     <main>
         <div id = "slideshowdiv">
-            <div id = "slideshow"></div>
+            <div id = "slideshow">
+                <!--<div class = "slideshowImg" id = "slideshowImg1" ></div>
+                <div class = "slideshowImg" id = "slideshowImg2" ></div>
+                <div class = "slideshowImg" id = "slideshowImg3" ></div>
+                <div class = "slideshowImg" id = "slideshowImg4" ></div>
+                <div class = "slideshowImg" id = "slideshowImg5" ></div>-->
+
+
+            </div>
         </div>
 
         <div class="content">
@@ -133,6 +141,10 @@
     <script>
 
 
+            ///////////////////   ADJUST SCREEN PHONE TO COMPUTER
+
+
+
             var mainsite = document.getElementById("mainsite");
             var mainsitecontent = document.getElementById("mainsitecontent");
             var homepagecontent = document.getElementById("homepagecontent");
@@ -180,13 +192,7 @@
 
 
 
-
-
-
-
-
-
-
+            ///////////////////   HAMBURGER ANIMATION
 
 
             $(document).ready(function(){
@@ -218,6 +224,82 @@
 
                 }
             }
+
+            ///////////////////   SLIDESHOW
+
+            const amountOfSlidshowImages = 5
+
+
+            function displaySlideshow () {
+
+
+                for (let i=0; i<amountOfSlidshowImages; i++ ) {
+                    document.getElementById("slideshowdiv").innerHTML += '<div class = "slideshowImg" id = "slideshowImg'+ i +'" ></div>';
+                    document.getElementById("slideshowImg"+i).style.background = 'url("assets/homepage/homepage_'+i+'.jpg") no-repeat center fixed';
+                    document.getElementById("slideshowImg"+i).style.backgroundSize = 'cover'
+
+                    if (i>0) {
+                        document.getElementById("slideshowImg"+i).style.opacity = '0%'
+
+                    }
+
+                }
+            
+            }
+
+            displaySlideshow();
+
+            function changeSlideshowImg (imgID) {
+
+                console.log("show image "+ imgID);
+
+                for (let i=0; i<amountOfSlidshowImages; i++ ) {
+
+
+
+                    if (i == imgID) {
+
+                        document.getElementById("slideshowImg"+i).style.opacity = '100%'
+                        
+                    } else {
+                        document.getElementById("slideshowImg"+i).style.opacity = '0%'
+
+                    }
+
+                    //if (i<2 && i>0) {
+                    //    document.getElementById("slideshowImg"+i).style.opacity = '100%'
+                    //}
+
+
+                }
+
+            }
+
+            var currentSlide = 1;
+
+            function runSlideshow () {
+                changeSlideshowImg(currentSlide);
+
+                if (currentSlide < amountOfSlidshowImages-1) {
+                    currentSlide++;
+                } else if (currentSlide = amountOfSlidshowImages-1) {
+                    currentSlide = 0;
+
+                }
+            }
+
+            setInterval(runSlideshow, 8000)
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 
