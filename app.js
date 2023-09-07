@@ -80,6 +80,21 @@ function displayHeader() {
 
     }
 
+    if (slide == 1) {
+        //gsap.to(".header", {opacity: 100, duration: 3});
+        document.getElementById("homepagecontent").style.opacity = '100%';
+
+
+    };
+    if (slide == 2 || slide == 0) {
+        //gsap.to(".header", {opacity: 0, duration: 3});
+
+        document.getElementById("homepagecontent").style.opacity = '0%';
+
+
+    }
+
+
 }
 
 

@@ -209,6 +209,11 @@ section {
     text-align-last: center;
     /*justify-content: center;*/
 
+    opacity: 0%;
+
+    transition: opacity 2s ;
+
+
 
 
 }
