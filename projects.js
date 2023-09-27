@@ -1,11 +1,6 @@
 ////////   PROJECTS
 
 
-
-
-
-
-
 class Project {
     constructor(id, date, name, image, description, type, position) {
         this._id = id;
@@ -59,7 +54,7 @@ class Projects {
 
 projectList = new Projects();
 
-projectList.newProject('001',
+projectList.newProject('0',
                     '10/08/23',
                     'Martins Lane',
                     'martinslane_thumb.jpg',
@@ -68,7 +63,7 @@ projectList.newProject('001',
                     'full'
 );
 
-projectList.newProject('002',
+projectList.newProject('1',
                     '10/08/23',
                     'Adlard',
                     'adlard_thumb.jpg',
@@ -77,7 +72,7 @@ projectList.newProject('002',
                     'left'
 );
 
-projectList.newProject('003',
+projectList.newProject('2',
                     '10/08/23',
                     'Brightside Cabinets',
                     'brightsidecabinets_thumb.jpg',
@@ -86,7 +81,7 @@ projectList.newProject('003',
                     'right'
 );
 
-projectList.newProject('004',
+projectList.newProject('3',
                     '10/08/23',
                     'French Curve',
                     'frenchcurve_thumb.jpg',
@@ -95,7 +90,7 @@ projectList.newProject('004',
                     'left'
 );
 
-projectList.newProject('005',
+projectList.newProject('4',
                     '10/08/23',
                     'House of Voltaire',
                     'houseofvoltaire_thumb.jpg',
@@ -104,7 +99,7 @@ projectList.newProject('005',
                     'full'
 );
 
-projectList.newProject('006',
+projectList.newProject('5',
                     '10/08/23',
                     'Brightside Wardrobe',
                     'brightsidewardrobe_thumb.jpg',
@@ -113,7 +108,7 @@ projectList.newProject('006',
                     'right'
 );
 
-projectList.newProject('007',
+projectList.newProject('6',
                     '10/08/23',
                     'Mike Show',
                     'mikeshow_thumb.jpg',
@@ -122,7 +117,7 @@ projectList.newProject('007',
                     'left'
 );
 
-projectList.newProject('008',
+projectList.newProject('7',
                     '10/08/23',
                     'Studio Voltaire',
                     'studiovoltaire_thumb.jpg',
@@ -131,10 +126,6 @@ projectList.newProject('008',
                     'right'
 );
 
-function alertClick (projectIndex) {
-    alert(projectIndex);
-    console.log(projectIndex)
-}
 
 
 
@@ -156,11 +147,11 @@ function displayProjects() {
 
     for (let i=0; i<=7; i++ ) {
         
-        document.getElementById("projectscontainer").innerHTML += '<div class = "project" id ="project'+ i +'" ><img class ="projectThumbImg" id = "projectThumbImg'+ i +'" src ="assets/projects/projectthumbnails/'+ projectList.projects[i].image +'" onClick = "alertClick('+ i +')"></div>';
+        document.getElementById("projectscontainer").innerHTML += '<div class = "project" id ="project'+ i +'" ><img class ="projectThumbImg" id = "projectThumbImg'+ i +'" src ="assets/projects/projectthumbnails/'+ projectList.projects[i].image +'" onClick = "projectClick('+ i +')"></div>';
 
         if (deviceType.includes("computer") || window.innerWidth > 550) {
 
-            document.getElementById("projectscontainer").innerHTML += '<br>';
+            document.getElementById("projectscontainer").innerHTML += '<br><br><br><br><br><br>';
 
 
             switch (projectList.projects[i].position) {
@@ -199,6 +190,58 @@ function displayProjects() {
 }
 
 displayProjects();
+
+
+function projectClick (projectIndex) {
+ 
+     document.getElementById("projectoverlay").style.display = 'block';
+     document.getElementById("illlayer").style.display = 'none';
+
+     console.log(imageList.images[projectIndex].project)
+
+     for (let i = 0; i<imageList.numberOfImages; i++) {
+
+        if (imageList.images[i].project == projectIndex) {
+
+            //displaying all images associated to that project
+
+            document.getElementById("projectbrowser").innerHTML += '<div class = "projimageslide" id = "projimageslide'+ i +'" ><div class = "projimagecontainer"><img class = "projimage" src = "./assets/projects/projectimages/'+ imageList.images[i].name +'"></div></div>';
+            console.log(document.getElementById("projectbrowser").innerHTML)
+            //if () {
+            //document.getElementById("projimageslide0").style.opacity = '100%';
+
+            //} else {
+            //document.getElementById("projimageslide1").style.opacity = '10%';
+
+            //}
+            //if (i == 0) {
+            //    console.log("i")
+            //    document.getElementById("projimageslide0").style.opacity = '100%';
+            //    //console.log(document.getElementById("projimageslide0"))
+            //} else {
+            //    document.getElementById("projimageslide"+i).style.opacity = '0%';
+//
+//
+            //}
+
+        }
+
+
+     }
+
+
+
+
+ 
+     
+ }
+
+
+
+
+
+
+ 
 
 
 

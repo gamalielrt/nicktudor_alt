@@ -51,7 +51,7 @@ function logScroll() {
 
     }, 1500);
 
-    console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+    //console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
     
 }
@@ -61,7 +61,7 @@ pagecontent.addEventListener("scroll", logScroll)
 
 
 
-console.log(pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+//console.log(pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
 
 
@@ -83,6 +83,8 @@ function displayHeader() {
     if (slide == 1) {
         //gsap.to(".header", {opacity: 100, duration: 3});
         document.getElementById("homepagecontent").style.opacity = '100%';
+        // document.getElementById("homepageNICKTUDORimage").style.left = '100px';
+
 
 
     };
@@ -116,7 +118,8 @@ function wheelFunc (e) {
     if (canSwipe) {
         //swipeup
         if (e.deltaY > 60 && slide < 4) {
-            if (slide !==2 || pageScrollDelay >= pagecontentimages.offsetHeight-pagecontent.offsetHeight) {
+            //console.log(pageScrollDelay,pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+            if (slide !==2 || Math.round(pageScrollDelay) >= pagecontentimages.offsetHeight-pagecontent.offsetHeight) {
                 console.log("swipe up")
 
                 canSwipe = false;
@@ -141,6 +144,7 @@ function wheelFunc (e) {
         
         //swipe down
         if (e.deltaY < -60 && slide > 0) {
+
             if (slide !==2 || pageScrollDelay == 0) {
                 console.log("swipe down")
 
@@ -217,7 +221,7 @@ function swipe() {
                 current -= window.innerHeight;
 
                 //console.log(slide, current);
-                console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+                //console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
 
                 //gsap.to(".content", {y:"-="+window.innerHeight, duration: 1, ease: "power4"});
@@ -237,7 +241,7 @@ function swipe() {
                 current += window.innerHeight;
 
                 //console.log(slide, current);
-                console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+                //console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
                 //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
                 gsap.to(".content", {y:current, duration: 1, ease: "power4"});

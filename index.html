@@ -44,10 +44,22 @@
                 </div>
         
             </div>
+            <div id = "projectoverlay">
+                <div id ="poverlaybc" onclick="closePoverlay()"></div>
+                <!--<div id = "poverlayx" onclick="closePoverlay()">
+                    <img src = "assets/cross.png" id = "poverlayximg">
+                </div>-->
+                <div id = "projectbrowser"></div>
+
+            </div>
+
     
         </div>
 
     </div>
+
+
+
 
     <main>
         <div id = "slideshowdiv">
@@ -82,10 +94,31 @@
     
             </section>
             <section id ="mainsite">
+
+            
                 <div id = "pagecontent">
 
+                    <div id ="illlayer">
+                        <div id = "illustration1" >
+                            <img id = "ill1" class = "illustration" src = "./assets/illustrations/ill0.png">
+                        </div>
+                
+                        <div id = "illustration2">
+                            <img id = "ill2"  src = "./assets/illustrations/ill1.png">
+                        </div>
+                
+                    </div>
+    
+
+                
+
                     <div id="projects">
-                        <div id = "projectscontainer"></div>
+
+    
+                        <div id = "projectscontainer">
+                            <br><br><br><br><br><br><br>
+                            
+                        </div>
                     </div>
 
 
@@ -251,7 +284,7 @@
 
             function changeSlideshowImg (imgID) {
 
-                console.log("show image "+ imgID);
+                //console.log("show image "+ imgID);
 
                 for (let i=0; i<amountOfSlidshowImages; i++ ) {
 
@@ -288,7 +321,8 @@
                 }
             }
 
-            setInterval(runSlideshow, 8000)
+            setInterval(runSlideshow, 3000);
+            
 
 
 
@@ -304,6 +338,13 @@
     </script>
 
     <script src="./projects.js"></script>
+    <script src="./images.js"></script>
+
+    <script src="./illustrations.js"></script>
+    <script src="./projectoverlay.js"></script>
+
+
+
 
 </body>
 </html>
