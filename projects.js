@@ -135,7 +135,7 @@ function displayProjects() {
     if (deviceType == "computer" || window.innerWidth > 550) {
         console.log('device is computer');
 
-        projectscontainer.style.width = '92%';
+        projectscontainer.style.width = '100%';
         projectscontainer.style.margin = 'auto';
 
 
@@ -157,7 +157,7 @@ function displayProjects() {
             switch (projectList.projects[i].position) {
                 case('full') :
 
-                    document.getElementById("projectThumbImg"+ i).style.width = '80%';
+                    document.getElementById("projectThumbImg"+ i).style.width = '60%';
                     document.getElementById("projectThumbImg"+ i).style.marginLeft = Math.floor(Math.random() * 15) + 5 + '%';
 
 
@@ -165,7 +165,7 @@ function displayProjects() {
                 break;
 
                 case('left') :
-                    document.getElementById("projectThumbImg"+ i).style.width = '50%';
+                    document.getElementById("projectThumbImg"+ i).style.width = '40%';
                     document.getElementById("projectThumbImg"+ i).style.marginLeft = Math.floor(Math.random() * 10) + 1 + '%';
 
 
@@ -174,7 +174,7 @@ function displayProjects() {
 
                 case('right') :
 
-                    document.getElementById("projectThumbImg"+ i).style.width = '50%';
+                    document.getElementById("projectThumbImg"+ i).style.width = '40%';
                     document.getElementById("projectThumbImg"+ i).style.marginLeft = Math.floor(Math.random() * 30) + 20 + '%';
 
 
@@ -191,50 +191,69 @@ function displayProjects() {
 
 displayProjects();
 
+var projIndexSel = 1;
+
 
 function projectClick (projectIndex) {
  
      document.getElementById("projectoverlay").style.display = 'block';
      document.getElementById("illlayer").style.display = 'none';
 
+     document.getElementById("projectbrowser").innerHTML = '';
+
+
      console.log(imageList.images[projectIndex].project)
 
      for (let i = 0; i<imageList.numberOfImages; i++) {
+
+        projIndexSel = 1
 
         if (imageList.images[i].project == projectIndex) {
 
             //displaying all images associated to that project
 
-            document.getElementById("projectbrowser").innerHTML += '<div class = "projimageslide" id = "projimageslide'+ i +'" ><div class = "projimagecontainer"><img class = "projimage" src = "./assets/projects/projectimages/'+ imageList.images[i].name +'"></div></div>';
-            console.log(document.getElementById("projectbrowser").innerHTML)
-            //if () {
-            //document.getElementById("projimageslide0").style.opacity = '100%';
+            document.getElementById("projectbrowser").innerHTML += '<div class = "projimageslide" id = "projimageslide'+ imageList.images[i].pindex +'" ><div class = "projimagecontainer"><img class = "projimage" src = "./assets/projects/projectimages/'+ imageList.images[i].name +'" onclick = "clickProjImage('+ imageList.images[i].pindex +')"></div></div>';
+            
+            console.log(document.getElementById("projectbrowser").innerHTML);
 
-            //} else {
-            //document.getElementById("projimageslide1").style.opacity = '10%';
 
-            //}
-            //if (i == 0) {
-            //    console.log("i")
-            //    document.getElementById("projimageslide0").style.opacity = '100%';
-            //    //console.log(document.getElementById("projimageslide0"))
-            //} else {
-            //    document.getElementById("projimageslide"+i).style.opacity = '0%';
-//
-//
-            //}
+            if (imageList.images[i].pindex == 1) {
+                document.getElementById("projimageslide"+ imageList.images[i].pindex).style.opacity = '100%';
+
+            } else {
+
+            document.getElementById("projimageslide"+ imageList.images[i].pindex).style.opacity = '0%';
+
+            }
 
         }
 
 
      }
-
-
-
-
- 
      
  }
+
+
+ function clickProjImage (pindex) {
+    
+    console.log(pindex,projIndexSel);
+
+    if (projIndexSel < pindex) {
+
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '0%';
+        projIndexSel++;
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '100%';
+
+    } else if ( projIndexSel == pindex){
+
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '0%';
+        projIndexSel = 1;
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '100%';
+
+
+    }
+
+}
 
 
 
