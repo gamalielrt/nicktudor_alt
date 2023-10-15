@@ -324,6 +324,83 @@ section {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------  PROJECTS ---------  */
+
+
+#mainsite {
+    background-color: #faf7ed;
+
+}
+
+
+#projects {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    pointer-events: auto;
+    overflow: scroll;
+
+
+
+
+
+}
+
+#projectscontainer {
+    pointer-events: auto;
+
+
+}
+
+
+.project {
+    width: 100%;
+    position:absolute;
+
+    top:100px;
+
+
+
+}
+
+.projectThumbImg {
+    width: 100%;
+    cursor: pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------  PROJECT OVERLAY ---------  */
 
 
@@ -357,7 +434,10 @@ section {
 #poverlayx {
     position: absolute;
 
+    z-index: 3;
+
     height: 50px;
+    width: 34px;
 
     top: 18px;
     left: 25px;
@@ -370,10 +450,29 @@ section {
     height: 100%;
 }
 
+#projectbrowserwrapper {
+    position: absolute;
+    height:100%;
+    width:100%;
+
+    pointer-events: none;
+
+    left: 0px;
+
+
+    transition: left 0.5s cubic-bezier(0.0, 0.5, 0.5 ,1.0), width 0.5s cubic-bezier(0.0, 0.5, 0.5 ,1.0);
+
+
+
+}
+
 #projectbrowser {
 
-    height:100vh;
-    width:100vw;
+    height:100%;
+    width:100%;
+
+
+
 
 
 
@@ -382,12 +481,18 @@ section {
 
 .projimageslide {
 
-    height:100vh;
-    width:100vw;
+    height:100%;
+    width:100%;
+
 
     position: absolute;
 
     pointer-events: none;
+
+    transition: opacity 0.3s cubic-bezier(0.0, 0.5, 0.5 ,1.0), width 0.5s cubic-bezier(0.0, 0.5, 0.5 ,1.0);
+
+
+
 
 
 
@@ -415,9 +520,18 @@ section {
 
 
 
+
+
+
 }
 
 .projimage {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 
 
     max-width: 100%;
@@ -426,6 +540,8 @@ section {
     pointer-events: all;
 
     cursor: none;
+
+
 
 
 
@@ -451,44 +567,56 @@ section {
 
 
 
+/* ---------  INFOSLIDER ---------  */
 
 
-/* ---------  PROJECTS ---------  */
+#infoslider {
+
+    background-color:#9d8676;
 
 
-#mainsite {
-    background-color: #faf7ed;
+
+    
+    line-height: 1.6;
+
+    position: absolute;
+    z-index: 1;
+    height: var(--app-height);
+    width:360px;
+    top: 0px;
+    left:-400px;
+
+    
+
+    transition: left 0.5s cubic-bezier(0.0, 0.5, 0.5 ,1.0);
+}
+
+#infoslidercontent {
+
+    color: #ffdb24;
+
+    width: 70%;
+    margin: auto;
+    margin-top: 30%;
+
+    text-align: left;
+
+    font-size: 17px;
+
+
+
+}
+
+#infoslidertitlewrapper {
+    
+    font-size: 20px;
+
+
 
 }
 
 
-#projects {
-    position: relative;
-    height: fit-content;
-    width: 100%;
-    pointer-events: auto;
-    overflow: scroll;
 
-
-
-
-}
-
-#projectscontainer {
-    pointer-events: auto;
-
-}
-
-
-.project {
-    width: 100%;
-
-}
-
-.projectThumbImg {
-    width: 100%;
-    cursor: pointer;
-}
 
 
 

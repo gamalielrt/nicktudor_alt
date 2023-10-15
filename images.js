@@ -112,5 +112,5 @@ function initImages () {
 
 initImages();
 
-console.log(imageList)
+//console.log(imageList)
 

@@ -21,7 +21,7 @@ const appHeight = () => {
     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
     current = -slide * window.innerHeight;
     content.style.transform = `translateY(${current}px)`;
-    console.log("appHeight", appHeight);
+    //console.log("appHeight", appHeight);
 }
 window.addEventListener('resize',appHeight)
 appHeight();
@@ -39,19 +39,21 @@ mainEl.addEventListener('wheel', wheelFunc, {passive: false});
 
 // SLIDE 2 WHICH IS A SCROLLER
 
-const pagecontent = document.getElementById("pagecontent")
-const pagecontentimages = document.getElementById("projectscontainer")
+const pagecontent = document.getElementById("pagecontent");
+const pagecontentimages = document.getElementById("projectscontainer");
+
 var pageScrollDelay = setTimeout(pagecontent.scrollTop, 1000);
+
+setTimeout(function () {console.log(Math.floor(document.getElementById("projects").scrollHeight - window.innerHeight))},5000);
 
 
 function logScroll() {
-    //pageScrollDelay = pagecontent.scrollTop;
     setTimeout(function () {
-        pageScrollDelay = pagecontent.scrollTop
+        pageScrollDelay = document.getElementById("projects").scrollTop//pagecontent.scrollTop
 
     }, 1500);
 
-    //console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+    console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
     
 }
@@ -61,7 +63,7 @@ pagecontent.addEventListener("scroll", logScroll)
 
 
 
-//console.log(pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+console.log(pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
 
 
@@ -115,11 +117,12 @@ let canSwipe = true;
 
 function wheelFunc (e) {
     //console.log(e.deltaY);
+    console.log(Math.floor(document.getElementById("projects").scrollTop))
     if (canSwipe) {
         //swipeup
         if (e.deltaY > 60 && slide < 4) {
             //console.log(pageScrollDelay,pagecontentimages.offsetHeight-pagecontent.offsetHeight);
-            if (slide !==2 || Math.round(pageScrollDelay) >= pagecontentimages.offsetHeight-pagecontent.offsetHeight) {
+            if (slide !==2 || Math.round(document.getElementById("projects").scrollTop) >= Math.floor(document.getElementById("projects").scrollHeight - window.innerHeight)) {
                 console.log("swipe up")
 
                 canSwipe = false;
@@ -127,7 +130,7 @@ function wheelFunc (e) {
 
 
                 slide++;
-                console.log(slide, current);
+                //console.log(slide, current);
                 //gsap.to(".content", {y:"-="+window.innerHeight, duration: 1, ease: "power4"});
                 gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
@@ -145,7 +148,7 @@ function wheelFunc (e) {
         //swipe down
         if (e.deltaY < -60 && slide > 0) {
 
-            if (slide !==2 || pageScrollDelay == 0) {
+            if (slide !==2 || document.getElementById("projects").scrollTop == 0) {
                 console.log("swipe down")
 
 
@@ -215,7 +218,7 @@ function swipe() {
     //drag/swipe up
     if (endY - initialY < -50) {
         if (slide < 4) {
-            if (slide !==2 || pageScrollDelay >= pagecontentimages.offsetHeight-pagecontent.offsetHeight) {
+            if (slide !==2 || Math.round(document.getElementById("projects").scrollTop) >= Math.floor(document.getElementById("projects").scrollHeight - window.innerHeight)) {
 
                 slide++;
                 current -= window.innerHeight;
@@ -235,7 +238,7 @@ function swipe() {
         }
     } else if (endY - initialY >50) {
         if (slide > 0) {
-            if (slide !==2 || pageScrollDelay == 0) {
+            if (slide !==2 || document.getElementById("projects").scrollTop == 0) {
 
                 slide--;
                 current += window.innerHeight;
