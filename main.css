@@ -388,6 +388,24 @@ section {
 
 }
 
+#loadmore {
+    color: #cf82b6;
+    font-size: 25px;
+
+
+    position:absolute;
+    width:100%;
+    height: 80px;
+    text-align: center;
+
+    cursor: pointer;
+
+    opacity: 100%;
+
+    transition: opacity 1s;
+
+}
+
 
 
 

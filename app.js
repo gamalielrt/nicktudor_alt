@@ -44,7 +44,7 @@ const pagecontentimages = document.getElementById("projectscontainer");
 
 var pageScrollDelay = setTimeout(pagecontent.scrollTop, 1000);
 
-setTimeout(function () {console.log(Math.floor(document.getElementById("projects").scrollHeight - window.innerHeight))},5000);
+//setTimeout(function () {console.log(Math.floor(document.getElementById("projects").scrollHeight - window.innerHeight))},5000);
 
 
 function logScroll() {
@@ -117,7 +117,7 @@ let canSwipe = true;
 
 function wheelFunc (e) {
     //console.log(e.deltaY);
-    console.log(Math.floor(document.getElementById("projects").scrollTop))
+    //console.log(Math.floor(document.getElementById("projects").scrollTop))
     if (canSwipe) {
         //swipeup
         if (e.deltaY > 60 && slide < 4) {
