@@ -7,4 +7,8 @@ function closePoverlay () {
     projectbrowser.innerHTML = '';
 
     document.getElementById("illlayer").style.display = 'block';
+
+    //clickinfoSlider ();
+    //infoSliderDisplayed = true;
+    //console.log(infoSliderDisplayed)
 }

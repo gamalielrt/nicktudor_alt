@@ -377,6 +377,8 @@ section {
 
     top:100px;
 
+    transition: opacity 2s;
+
 
 
 }
@@ -762,12 +764,37 @@ section {
     
 }
 
+#architectureBtn {
+    cursor: pointer;
+}
+
+#artBtn {
+    cursor: pointer;
+}
+
+#furnitureBtn {
+    cursor: pointer;
+}
+
+#interiorBtn {
+    cursor: pointer;
+}
+
+
+
+
 #sustainabilitybtn {
+
+    cursor: pointer;
+
     padding-top: 30%;
 
 }
 
 #informationbtn {
+
+    cursor: pointer;
+
     padding-top: 30%;
 
 }

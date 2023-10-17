@@ -96,10 +96,10 @@ projectList.newProject('2',
 
 projectList.newProject('3',
                     '10/08/23',
-                    'Brightside Cabinets',
-                    'brightsidecabinets_thumb.jpg',
-                    'Sitting inside a refurbished Victorian terraced house, I wanted to reflect the historic character of the building and the modern interventions it had undergone. <p><br><p>I machined an ovolo moulding in oak to form the front of the cabinets. The doors, simple solid oak mortice and tenon frames, feature a discrete finger pull along their bottom edge, while magnets were hidden beneath oak plugs to replace the need for door catches. ',
-                    'Interior',
+                    'French Curve',
+                    'frenchcurve_thumb.jpg',
+                    'Side table in black walnut.',
+                    'Furniture',
                     'left'
 );
 
@@ -108,10 +108,10 @@ projectList.newProject('3',
 
 projectList.newProject('4',
                     '10/08/23',
-                    'French Curve',
-                    'frenchcurve_thumb.jpg',
-                    'Side table in black walnut.',
-                    'Furniture',
+                    'Brightside Cabinets',
+                    'brightsidecabinets_thumb.jpg',
+                    'Sitting inside a refurbished Victorian terraced house, I wanted to reflect the historic character of the building and the modern interventions it had undergone. <p><br><p>I machined an ovolo moulding in oak to form the front of the cabinets. The doors, simple solid oak mortice and tenon frames, feature a discrete finger pull along their bottom edge, while magnets were hidden beneath oak plugs to replace the need for door catches. ',
+                    'Interior',
                     'right'
 );
 
@@ -159,7 +159,7 @@ projectList.newProject('8',
                     'Studio Voltaire',
                     'studiovoltaire_thumb.jpg',
                     'Project in collaboration with Josh Malby. We were asked by Studio Voltaire, London, to design a selection of furniture for they redevelopment project completed in 2021. Consisting primarily of large scale communal tables and the staff desks, I also designed and made their onsite Cafe. <p><br><p>Details like the lancet arch and ebonised oak wedge were a nod toward the historic fabric of the original building, while the birch ply and Forbo linoleum reflect the modernisation undergone through the building’s redevelopment. <p><br><p>The communal tables for the art studios were a particular favourite, using an oak wedge to lock all the parks together without the need for fixings, allowing the tables to be constructed and reconstructed as needed to make additional space in the communal areas.',
-                    'Furniture',
+                    'Interior',
                     'right'
 );
 
@@ -227,7 +227,7 @@ projectList.newProject('13',
 
 
 
-
+///////////////    DISPLAY PROJECTS
 
 
 var initDisTop = 100;
@@ -266,7 +266,6 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
         document.getElementById("projectscontainer").innerHTML += '<div class = "project" id ="project'+ i +'" ><img class ="projectThumbImg lazy" id = "projectThumbImg'+ i +'" src ="assets/projects/projectimages/'+ i +'/'+ i + '_1.jpg" onClick = "projectClick('+ i +')"></div>';
 
         
-        //document.getElementById("projectscontainer").innerHTML += '<div class = "project" id ="project'+ i +'" ><img class ="projectThumbImg lazy" id = "projectThumbImg'+ i +'" src ="assets/projects/projectthumbnails/'+ projectList.projects[i].image +'" onClick = "projectClick('+ i +')"></div>';
 
         if (deviceType.includes("computer") || window.innerWidth > 550) {
 
@@ -466,13 +465,18 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 displayProjects(0, 8, initDisTop);
 
 
+
+
+//////////////  LOAD MORE
+
+
 function loadMore () {
 
     //document.getElementById("projectscontainer").innerHTML = '';
 
     if (loadMoreClicked == false) {
 
-        displayProjects(9,projectList.numberOfProjects, initDisTop);
+        displayProjects(8,projectList.numberOfProjects, initDisTop);
         document.getElementById("loadmore").style.opacity = '0%';
         setTimeout( ()=> {document.getElementById("loadmore").style.display = 'none'},1000);
 
@@ -487,6 +491,12 @@ function loadMore () {
 
 
 }
+
+
+
+
+
+///////////////  DISPLAY IMAGES
 
 
 
@@ -614,6 +624,49 @@ function clickinfoSlider () {
 
     }
 }
+
+
+
+/////////////////   FILTER
+
+
+
+
+function filter (catagory) {
+
+    console.log(projectList.numberOfProjects);
+
+    clickMenu ();
+
+    document.getElementById("hamburgericon").classList.toggle("open");
+
+
+    for (let i=0; i < projectList.numberOfProjects; i++) {
+
+        console.log(i)
+
+        if (catagory !== projectList.projects[i].type) {
+
+            document.getElementById("project" + i).style.opacity = '20%';
+
+            
+
+        } else {
+            document.getElementById("project" + i).style.opacity = '100%';
+
+
+        }
+
+    }
+
+
+
+}
+
+//filter('Art');
+
+
+
 
 
 
