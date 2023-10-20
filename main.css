@@ -377,15 +377,25 @@ section {
 
     top:100px;
 
-    transition: opacity 2s;
+    transition: opacity 0.5s;
 
 
 
 }
 
+
+
+
 .projectThumbImg {
     width: 100%;
     cursor: pointer;
+
+
+}
+
+.projectThumbImg:hover {
+
+    opacity: 90%;
 
 
 }
@@ -763,6 +773,11 @@ section {
 
     
 }
+
+#allBtn {
+    cursor: pointer;
+}
+
 
 #architectureBtn {
     cursor: pointer;

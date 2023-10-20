@@ -230,7 +230,9 @@ projectList.newProject('13',
 ///////////////    DISPLAY PROJECTS
 
 
-var initDisTop = 100;
+var initDisTop = 130;
+
+var projectsDisTop = [];
 
 var loadMoreClicked = false;
 
@@ -260,6 +262,10 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
     for (let i=projectsToDisplaystart; i<=projectsToDisplay-1; i++ ) {
 
         console.log(disTop);
+
+       ////////   Log Distance from top into an Array
+       projectsDisTop[i] = disTop;
+
 
         
         
@@ -309,10 +315,6 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
                     document.getElementById("projectThumbImg"+ i).style.width = '60%';
                     document.getElementById("projectThumbImg"+ i).style.marginLeft = Math.floor(Math.random() * 35) + 5 + '%';
 
-                    //console.log('display Full')
-
-
-
 
                 break;
 
@@ -332,12 +334,6 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
                     } 
     
                     document.getElementById("projectThumbImg"+ i).style.marginLeft = Math.floor(Math.random() * 10) + 1 + '%';
-
-                    //console.log('display Left', document.getElementById("projectThumbImg"+ i).style.width, 'px');
-
-
-
-
 
 
 
@@ -360,13 +356,6 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
                 document.getElementById("projectThumbImg"+ i).style.marginLeft = Math.floor(Math.random() * (65 - 50) + 50 )+ '%';
 
 
-                    //console.log('display Right', document.getElementById("projectThumbImg"+ i).style.width, 'px');
-
-
-
-
-
-
 
                 break;
 
@@ -380,17 +369,16 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
                 disTop = disTop+ window.innerWidth/2 //550;
 
-                //console.log('after full','+500');
 
             } else if (projectList.projects[i].position == 'right' || projectList.projects[i].position == 'left') {
 
                 disTop = disTop+ window.innerWidth/4 //300;
 
-                //console.log('after small','+200');
-
 
             }
-                
+
+
+            //console.log(projectsDisTop);
 
 
             switch (projectList.projects[i].position) {
@@ -398,35 +386,16 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
                     afterFull = true;
 
-                    //console.log('afterFull =', afterFull)
-
-
-
                 break;
 
                 case('left') :
 
                     afterFull = false;
 
-                    //console.log('afterFull =', afterFull)
-
-
-
-
-
                 break;
 
                 case('right') :
-
-
-
                     afterFull = false;
-
-                    //console.log('afterFull =', afterFull)
-
-
-
-
 
                 break;
 
@@ -455,6 +424,8 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
 
     }
+
+    
 
 
 
@@ -634,28 +605,55 @@ function clickinfoSlider () {
 
 function filter (catagory) {
 
-    console.log(projectList.numberOfProjects);
+    loadMore ();
+
+
+    gsap.to(document.getElementById("projects"), {scrollTop:0, duration: 1, ease: "power4"});
 
     clickMenu ();
 
     document.getElementById("hamburgericon").classList.toggle("open");
 
+    var filtDisTop = 130;
+
+    if (catagory == 'all') {
+        console.log('all',projectsDisTop[0] )
+        for (let i=0; i < projectList.numberOfProjects; i++) {
+
+
+
+            document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
+            document.getElementById("project" + i).style.opacity = '100%';
+            document.getElementById("project" + i).style.top = projectsDisTop[i] +'px';
+        }
+
+
+
+    } else {
+
 
     for (let i=0; i < projectList.numberOfProjects; i++) {
 
-        console.log(i)
 
         if (catagory !== projectList.projects[i].type) {
 
-            document.getElementById("project" + i).style.opacity = '20%';
-
-            
+            document.getElementById("project" + i).style.opacity = '0%';
+            document.getElementById("project" + i).style.top = projectsDisTop[i] +'px';
 
         } else {
+            
+            document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
             document.getElementById("project" + i).style.opacity = '100%';
+            document.getElementById("project" + i).style.top = filtDisTop +'px';
+
+            filtDisTop += window.innerWidth/3;
 
 
         }
+    }
+
+
+        console.log(filtDisTop);
 
     }
 
