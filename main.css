@@ -684,6 +684,8 @@ section {
 
     transition: opacity 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0);
 
+    will-change: transform;
+
 
 }
 
@@ -882,32 +884,49 @@ section {
 #infopage {
     background-color: #473416;
     color: #faf7ed;
-    font-size: 13px;
 
 
 }
 
+#infopagecanvas {
+    width: 100%;
+    height: 100%;
 
 
+
+
+}
 
 #infocontent {
-    padding: 4%;
-    padding-top: 150px;
-    font-size: 15px;
-    position: relative;
+
+    position:absolute;
 
 
-    
+    height: 100%;
+    width:100%;
+
+    /*transition: translate, 0.1s;*/
+
+    will-change: transform;
+
+
+
     
 }
 
+
+
 #infoslideshowwrap {
-    width: 100%;
+    position:absolute;
+    left: 15%;
+    top: 15%;
+    width: 70%;
+    height: 70%;
 }
 
 
 #infoslideshowcontainer {
-    max-width: 700px;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -917,25 +936,59 @@ section {
     margin: auto;
 }
 
-#infotext1 {
-    width: 70%;
-}
-
-#infoillustration {
-    width: 150px;
-    transform: scaleX(-1);
+#infocontent2 {
     position:absolute;
-    right:60px;
-    bottom:80px;
+    left : 100vw;
+    width:100%;
+
+    /*transition: translate, 0.1s;*/
+
+    will-change: transform;
+
+    
+}
+
+#infomap {
+    padding-top: 7%;
+    width: 80%;
+    margin: auto;
+
+}
+#infomapimg {
+    width: 100%;
+
+}
+#infomaptext {
+    position: absolute;
+    font-size: 16px;
+    width:100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+#infotextblock1{
+    width: 300px;
+    text-align: left;
+}
+#infotextblock2{
+    width: 190px;
+
 
 }
 
-#infotext2 {
-    position:absolute;
-    right:0px;
-    bottom:20px;
-    width: 200px;
+#infotextblock3{
+    width: 190px;
+
 }
+
+#infotextblock4{
+    width: 190px;
+
+}
+
+
+
+
 
 
 

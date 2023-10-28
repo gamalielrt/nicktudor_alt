@@ -104,7 +104,7 @@ function initillustration2() {
 
 
 initillustration1();
-setTimeout(initillustration2, 6000);
+//setTimeout(initillustration2, 6000);
 
 
 function getScroll() {

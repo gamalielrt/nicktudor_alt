@@ -147,36 +147,46 @@
             </section>
 
             <section id ="infopage">
-                <div id = "infocontent">
-                    <div id = "infoslideshowwrap">
-                        <div id = "infoslideshowcontainer">
-                            <img id="infoslideshow" src="assets/info/info_01.jpeg">
+                <div id ="infopagecanvas" onwheel="infoScroll(event)">
+                    <div id = "infocontent">
+                        <div id = "infoslideshowwrap">
+                            <div id = "infoslideshowcontainer">
+                                <img id="infoslideshow" src="assets/info/info_01.jpeg">
+                            </div>
                         </div>
                     </div>
-                    <br>
-                    <p id = "infotext1">I spend most of my week in my workshop based on the Dengie Peninsula, Essex. An hour and a half from London, visits can be arranged by appointment. 
-                    <br><br>
-                    For enquires please contact:
-                    <br>
-                    e: info@nick-tudor.com
-                    <br>
-                    t: +44 (0) 7769 553127
-                    <br><br>
-                    Registered business address:
-                    <br>
-                    33 Yarnfield Square
-                    London
-                    SE15 5JD</p>
 
-                </div>
-                <img id="infoillustration" src = "assets/illustrations/SAWING-1White.png">
-                <p id = "infotext2">© Nick Tudor 2023
-                    <br>
-                    Identity: Leomi Sadler
-                    <br>
-                    Website: Gamaliel Rendle Traynor
-                </p>
-            </div>
+                    <div id ="infocontent2">
+                        <div id = "infomap">
+                            <img id = "infomapimg" src="assets/info/map-new.png">
+                        </div>
+                        <div id = "infomaptext">
+                            <div id="infotextblock1">To discuss a project, idea or an order, please get in touch. 
+                                Please note that lead-times are approximately 6-8 weeks from time of order.</div>
+                            <div id="infotextblock2">a: The Cowshed, <br>
+                                Wallums Farm,<br>
+                                Maldon Road, <br>
+                                Bradwell-on-Sea,<br>
+                                Essex,<br>
+                                CM0 7HR</div>
+                            <div id="infotextblock3">e: info@nick-tudor.com<br>
+                                t: +44 (0) 7769 553127<br>
+                                i: @nick_tudor</div>
+                            <div id="infotextblock4">© Nick Tudor 2024<br>
+                                Identity: Leomi Sadler<br>
+                                Website: Gamaliel Rendle Traynor</div>
+
+                            
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+             </div>
 
             </section>
 
@@ -398,7 +408,43 @@
                     window.addEventListener("resize", lazyload);
                     window.addEventListener("orientationChange", lazyload);
                 }
-                };
+            };
+
+
+
+
+
+            //////////////   INFO SCROLL
+
+            var transAmount = 0;
+            var transSpeed = (window.innerWidth/100)*1.5;
+            var infoScrollPos = 0
+
+            function infoScroll(event) {
+
+                var y = event.deltaY;
+                var currentSize = event.target.style.width;
+                if (y > 0 && infoScrollPos < 67) {
+                    document.getElementById("infocontent").style.transform = 'translate('+ transAmount +'px)';
+                    document.getElementById("infocontent2").style.transform = 'translate('+ transAmount +'px)';
+
+                    infoScrollPos +=1;
+                    console.log(infoScrollPos);
+
+
+                    transAmount -= transSpeed;
+                } else if (y < 0 && infoScrollPos > 0){
+                    document.getElementById("infocontent").style.transform = 'translate('+ transAmount +'px)';
+                    document.getElementById("infocontent2").style.transform = 'translate('+ transAmount +'px)';
+
+                    transAmount += transSpeed;
+
+                    infoScrollPos -=1;
+                    console.log(infoScrollPos);
+
+
+                }
+            }
 
 
 
@@ -414,6 +460,8 @@
 
     <script src="./projects.js"></script>
     <script src="./images.js"></script>
+    <script src="./info.js"></script>
+
 
     <script src="./illustrations.js"></script>
     <script src="./projectoverlay.js"></script>

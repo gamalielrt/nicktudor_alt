@@ -241,7 +241,7 @@ var loadMoreClicked = false;
 function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput) {
 
     if (deviceType == "computer" || window.innerWidth > 550) {
-        console.log('device is computer');
+        //console.log('device is computer');
 
         projectscontainer.style.width = '100%';
         projectscontainer.style.margin = 'auto';
@@ -261,7 +261,7 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
     for (let i=projectsToDisplaystart; i<=projectsToDisplay-1; i++ ) {
 
-        console.log(disTop);
+        //console.log(disTop);
 
        ////////   Log Distance from top into an Array
        projectsDisTop[i] = disTop;
@@ -344,7 +344,7 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
                 document.getElementById("projectThumbImg"+ i).onload = function(){
                     if (document.getElementById("projectThumbImg"+ i).height > document.getElementById("projectThumbImg"+ i).width) {
 
-                        console.log("portrait");
+                        //console.log("portrait");
 
                         document.getElementById("projectThumbImg"+ i).style.width = Math.floor(Math.random() * (20 - 20) + 20)+ '%';
 
@@ -368,6 +368,7 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
 
                 disTop = disTop+ window.innerWidth/2 //550;
+
 
 
             } else if (projectList.projects[i].position == 'right' || projectList.projects[i].position == 'left') {
@@ -424,6 +425,9 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
 
     }
+
+    //console.log(document.getElementById("project5").style.top)
+
 
     
 
@@ -608,6 +612,8 @@ function filter (catagory) {
     loadMore ();
 
 
+
+
     gsap.to(document.getElementById("projects"), {scrollTop:0, duration: 1, ease: "power4"});
 
     clickMenu ();
@@ -624,8 +630,24 @@ function filter (catagory) {
 
             document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
             document.getElementById("project" + i).style.opacity = '100%';
-            document.getElementById("project" + i).style.top = projectsDisTop[i] +'px';
+
+            if( projectList.projects[i].position == 'full' && i !== 0) {
+                document.getElementById("project" + i).style.top = projectsDisTop[i] + window.innerWidth/10 +'px';
+
+            }
+
+            else {
+                document.getElementById("project" + i).style.top = projectsDisTop[i] + 'px';
+
+
+            }
+
+            console.log(projectsDisTop);
+            //console.log(projectList.projects[5].position)
+            console.log(document.getElementById("project5").style.top, window.innerWidth);
         }
+
+        //window.innerWidth/10
 
 
 
@@ -638,15 +660,34 @@ function filter (catagory) {
         if (catagory !== projectList.projects[i].type) {
 
             document.getElementById("project" + i).style.opacity = '0%';
-            document.getElementById("project" + i).style.top = projectsDisTop[i] +'px';
+
+            document.getElementById("project" + i).style.top = filtDisTop - window.innerHeight + 'px';//projectsDisTop[i] +'px';
 
         } else {
+
+
             
             document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
             document.getElementById("project" + i).style.opacity = '100%';
             document.getElementById("project" + i).style.top = filtDisTop +'px';
 
-            filtDisTop += window.innerWidth/3;
+
+            //filtDisTop += window.innerWidth/2.3;
+
+            if (projectList.projects[i].position == 'full') {
+
+
+                filtDisTop = filtDisTop+ window.innerWidth/2 //550;
+
+
+
+            } else if (projectList.projects[i].position == 'right' || projectList.projects[i].position == 'left') {
+
+                filtDisTop = filtDisTop+ window.innerWidth/3 //300;
+
+
+            }
+
 
 
         }

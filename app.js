@@ -59,11 +59,13 @@ function logScroll() {
 }
 
 
+
+
 pagecontent.addEventListener("scroll", logScroll)
 
 
 
-console.log(pagecontentimages.offsetHeight-pagecontent.offsetHeight);
+//console.log(pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
 
 
@@ -123,14 +125,14 @@ function wheelFunc (e) {
         if (e.deltaY > 60 && slide < 4) {
             //console.log(pageScrollDelay,pagecontentimages.offsetHeight-pagecontent.offsetHeight);
             if (slide !==2 || Math.round(document.getElementById("projects").scrollTop) >= Math.floor(document.getElementById("projects").scrollHeight - window.innerHeight)) {
-                console.log("swipe up")
+                //console.log("swipe up")
 
                 canSwipe = false;
                 current -= window.innerHeight;
 
 
                 slide++;
-                //console.log(slide, current);
+                console.log(slide, current);
                 //gsap.to(".content", {y:"-="+window.innerHeight, duration: 1, ease: "power4"});
                 gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
@@ -140,6 +142,12 @@ function wheelFunc (e) {
                 }, 600);
 
                 displayHeader();
+
+                if (slide == 4 ) {
+                    console.log('info')
+                }
+                
+                                
     
 
             }
@@ -148,25 +156,50 @@ function wheelFunc (e) {
         //swipe down
         if (e.deltaY < -60 && slide > 0) {
 
-            if (slide !==2 || document.getElementById("projects").scrollTop == 0) {
-                console.log("swipe down")
+            if (slide < 4) {
+
+                if (slide !==2 || document.getElementById("projects").scrollTop == 0) {
+                    //console.log("swipe down")
 
 
-                canSwipe = false;
-                current += window.innerHeight;
+                    canSwipe = false;
+                    current += window.innerHeight;
 
 
-                slide--;
-                console.log(slide, current);
-                //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
-                gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+                    slide--;
+                    console.log(slide, current);
+                    //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
+                    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
 
-                setTimeout(() => {
-                    canSwipe = true;
-                }, 600);
+                    setTimeout(() => {
+                        canSwipe = true;
+                    }, 600);
 
-                displayHeader();
+                    displayHeader();
+
+                }
+            } else {
+                if (infoScrollPos == 0) {
+                    //console.log("swipe down")
+
+
+                    canSwipe = false;
+                    current += window.innerHeight;
+                    
+                    
+                    slide--;
+                    console.log(slide, current);
+                    //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
+                    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+                    
+                    
+                    setTimeout(() => {
+                        canSwipe = true;
+                    }, 600);
+                    displayHeader();
+                    
+                }
 
             }
 
@@ -223,7 +256,7 @@ function swipe() {
                 slide++;
                 current -= window.innerHeight;
 
-                //console.log(slide, current);
+                console.log(slide, current);
                 //console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
 
 
@@ -237,23 +270,27 @@ function swipe() {
 
         }
     } else if (endY - initialY >50) {
-        if (slide > 0) {
+        if (slide > 0 && slide < 4) {
             if (slide !==2 || document.getElementById("projects").scrollTop == 0) {
 
                 slide--;
                 current += window.innerHeight;
 
-                //console.log(slide, current);
-                //console.log(pageScrollDelay, pagecontentimages.offsetHeight-pagecontent.offsetHeight);
-
-                //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
                 gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
                 displayHeader();
             }
 
+        } else if (slide == 4) {
+            if (infoScrollPos == 0) {
+                slide--;
+                current += window.innerHeight;
 
+                gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
+                displayHeader();
+
+            }
         }
     }
 }
