@@ -610,15 +610,23 @@ function clickinfoSlider () {
 function filter (catagory) {
 
     loadMore ();
+    clickMenu ();
+
+    
+
+    slide = 2;
+    current = -window.innerHeight*2
+
+
+
+    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+
 
 
 
 
     gsap.to(document.getElementById("projects"), {scrollTop:0, duration: 1, ease: "power4"});
 
-    clickMenu ();
-
-    document.getElementById("hamburgericon").classList.toggle("open");
 
     var filtDisTop = 130;
 
@@ -630,6 +638,11 @@ function filter (catagory) {
 
             document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
             document.getElementById("project" + i).style.opacity = '100%';
+
+            document.getElementById("projectThumbImg"+ i).style.pointerEvents = 'auto';
+            document.getElementById("project"+ i).style.pointerEvents = 'auto';
+
+
 
             if( projectList.projects[i].position == 'full' && i !== 0) {
                 document.getElementById("project" + i).style.top = projectsDisTop[i] + window.innerWidth/10 +'px';
@@ -659,9 +672,15 @@ function filter (catagory) {
 
         if (catagory !== projectList.projects[i].type) {
 
-            document.getElementById("project" + i).style.opacity = '0%';
+            document.getElementById("project" + i).style.opacity = '00%';
 
             document.getElementById("project" + i).style.top = filtDisTop - window.innerHeight + 'px';//projectsDisTop[i] +'px';
+
+            document.getElementById("projectThumbImg"+ i).style.pointerEvents = 'none';
+            document.getElementById("project"+ i).style.pointerEvents = 'none';
+
+
+
 
         } else {
 
@@ -670,6 +689,11 @@ function filter (catagory) {
             document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
             document.getElementById("project" + i).style.opacity = '100%';
             document.getElementById("project" + i).style.top = filtDisTop +'px';
+
+            document.getElementById("projectThumbImg"+ i).style.pointerEvents = 'auto';
+            document.getElementById("project"+ i).style.pointerEvents = 'auto';
+
+
 
 
             //filtDisTop += window.innerWidth/2.3;

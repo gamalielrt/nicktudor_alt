@@ -127,13 +127,11 @@ section {
 
 #slideshowdiv {
 
-    scroll-snap-align: start;
 
 
     width: 100vw;
     height: 100vh;
 
-    /*background: url("assets/homepage/homepage_0.jpg") no-repeat center fixed;*/
     background-size: cover;
     background-attachment: scroll;
 
@@ -158,8 +156,6 @@ section {
     background-attachment: scroll;
     background: no-repeat center fixed;
     transition: opacity 1.5s ;
-
-
 
 }
 
@@ -186,6 +182,8 @@ section {
 
 #homepage {
     background-color: #faf7ed;
+    padding-top: 10%;
+
 
 }
 
@@ -193,50 +191,95 @@ section {
 
 #homepagecontent {
     color: #e52421;
-    font-size: 14px;
+    font-size: 19px;
+
+    width: 70%;
+    margin: auto;
+    height: 70%;
 
 
     /*position:absolute;
     will-change: transform;
     top: 150%;*/
 
-    padding-top: 15%;
-    padding-left: 20%;
-    padding-right: 20%;
-    text-align: justify;
-    text-align-last: center;
-    /*justify-content: center;*/
+    text-align: center;
 
     opacity: 0%;
+
 
     transition: opacity 1s ;
 
 
 
 
+
+
 }
+
 
 #homepageNICKTUDOR {
-    width:100%;
-    text-align: center;
+
+    position:absolute;
+    transition: translate, 0.8s;
+    width:70%;
+    transform: translateY(300px);
+
+    top: 15%;
+
 }
+
+#homepagetext1 {
+    position:absolute;
+
+    top:28%;
+    width: 70%;
+    text-align: justify;
+    text-align-last: center;
+    transform: translateY(300px);
+
+
+    transition: translate, 1s;
+}
+
 
 #homepageLOGO {
-    width:100%;
-    text-align: center;
+
+    position: absolute;
+    width:70%;
+    top:40%;
+    transform: translateY(300px);
+
+
+    transition: translate, 1.2s;
+
 
 }
+
+#homepagetext2 {
+    position: absolute;
+    width: 70%;
+
+    top:58%;
+
+
+    text-align: justify;
+    text-align-last: center;
+    transform: translateY(300px);
+
+
+    transition: translate, 1.4s;
+}
+
 
 
 #homepageNICKTUDORimage {
     width: 150px;
-    left:200px;
 
     
 }
 
 #homepageLOGOimage {
-    width: 75px;
+    width: 140px;
 }
 
 
@@ -635,13 +678,23 @@ section {
 
 
 
+
 }
 
 #infoslidertitlewrapper {
     
     font-size: 20px;
+    font-weight: bold;
 
 
+
+
+}
+
+#infosliderdescription {
+    height: 70vh;
+
+    overflow: auto;
 
 }
 
@@ -905,7 +958,7 @@ section {
     height: 100%;
     width:100%;
 
-    /*transition: translate, 0.1s;*/
+    transition: translate, 1s;
 
     will-change: transform;
 
@@ -922,40 +975,56 @@ section {
     top: 15%;
     width: 70%;
     height: 70%;
+    overflow: hidden;
+
+    
+}
+
+.slideshowinfoimg {
+    position:fixed;
+
+    width: 70%;
+    height: 70%;
+
+    opacity: 100%;
+    transition: opacity 1.5s ;
+
+
+
+
 }
 
 
-#infoslideshowcontainer {
-    max-width: 100%;
-    margin: auto;
-}
 
-#infoslideshow {
-    width: 100%;
-    position: relative;
-    margin: auto;
-}
 
 #infocontent2 {
     position:absolute;
     left : 100vw;
     width:100%;
 
-    /*transition: translate, 0.1s;*/
+    height: 90%;
+
 
     will-change: transform;
+
+
+    margin-top: 5%;
 
     
 }
 
 #infomap {
-    padding-top: 7%;
-    width: 80%;
+
+    height: 80%;
     margin: auto;
+
+    text-align: center;
+
+    transition: translate, 1s;
 
 }
 #infomapimg {
-    width: 100%;
+    height: 100%;
 
 }
 #infomaptext {
@@ -964,6 +1033,11 @@ section {
     width:100%;
     display: inline-flex;
     justify-content: space-evenly;
+    bottom: 10px;
+
+    transition: translate, 1.3s;
+
+
 }
 
 #infotextblock1{
@@ -985,6 +1059,9 @@ section {
     width: 190px;
 
 }
+
+
+
 
 
 

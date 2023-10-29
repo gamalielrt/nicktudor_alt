@@ -37,10 +37,10 @@
                     <div id = "furnitureBtn" onClick = "filter('Furniture')">Furniture</div>
                     <div id = "interiorBtn" onClick = "filter('Interior')">Interior</div>
                 </div>
-                <div id="sustainabilitybtn">
+                <div id="sustainabilitybtn" onClick = "goToSustainability()">
                     Sustainability
                 </div>
-                <div id="informationbtn">
+                <div id="informationbtn" onClick = "goToInformation()">
                     Information
                 </div>
         
@@ -99,9 +99,9 @@
             <section id ="homepage">
                 <div id="homepagecontent" class = "card">
                     <div id="homepageNICKTUDOR"><img id="homepageNICKTUDORimage" src="assets/logos/NICK-TUDOR-RED.png"></div><br>
-                    <p>I’m a designer and carpenter based in London and Essex. I design and make bespoke furniture, buildings, architectural features, and collaborate with other architects, artists, designers and private clients, to realise projects of various scales. My work can be found in museums, galleries and other public institutions in addition to domestic settings.</p> 
+                    <p id = "homepagetext1">I’m a designer and carpenter based in London and Essex. I design and make bespoke furniture, buildings, architectural features, and collaborate with other architects, artists, designers and private clients, to realise projects of various scales. My work can be found in museums, galleries and other public institutions in addition to domestic settings.</p> 
                     <div id="homepageLOGO"><img id="homepageLOGOimage" src="assets/logos/FACE-RED.png"></div>
-                    <p>I am driven by a desire to contribute positive change in the built environment; to create sustainable outcomes of lasting quality. </p>
+                    <p id = "homepagetext2">I am driven by a desire to contribute positive change in the built environment; to create sustainable outcomes of lasting quality. </p>
                 </div>
     
             </section>
@@ -150,9 +150,6 @@
                 <div id ="infopagecanvas" onwheel="infoScroll(event)">
                     <div id = "infocontent">
                         <div id = "infoslideshowwrap">
-                            <div id = "infoslideshowcontainer">
-                                <img id="infoslideshow" src="assets/info/info_01.jpeg">
-                            </div>
                         </div>
                     </div>
 
@@ -164,11 +161,11 @@
                             <div id="infotextblock1">To discuss a project, idea or an order, please get in touch. 
                                 Please note that lead-times are approximately 6-8 weeks from time of order.</div>
                             <div id="infotextblock2">a: The Cowshed, <br>
-                                Wallums Farm,<br>
-                                Maldon Road, <br>
-                                Bradwell-on-Sea,<br>
-                                Essex,<br>
-                                CM0 7HR</div>
+                                  Wallums Farm,<br>
+                                  Maldon Road, <br>
+                                  Bradwell-on-Sea,<br>
+                                  Essex,<br>
+                                  CM0 7HR</div>
                             <div id="infotextblock3">e: info@nick-tudor.com<br>
                                 t: +44 (0) 7769 553127<br>
                                 i: @nick_tudor</div>
@@ -215,7 +212,7 @@
             var deviceType = ''; 
 
             function detectScreenWidth () {
-                if (window.innerWidth > 550) {
+                /*if (window.innerWidth > 550) {
                     deviceType = 'computer';
                     homepagecontent.style.fontSize = '19px'
                     homepagecontent.style.paddingTop = '12%';
@@ -242,6 +239,7 @@
 
 
                 }
+                */
                 //console.log(deviceType);
             }
 
@@ -252,14 +250,16 @@
             ///////////////////   HAMBURGER ANIMATION
 
 
-            $(document).ready(function(){
-                $('#hamburgericon').click(function(){
-                    $(this).toggleClass('open');
-                });
-            });
+            //$(document).ready(function(){
+            //    $('#hamburgericon').click(function(){
+            //        $(this).toggleClass('open');
+            //    });
+            //});
 
 
             function clickMenu () {
+                document.getElementById("hamburgericon").classList.toggle("open");
+
                 if (menuDisplayed == false) {
 
                     //console.log("menu display")
@@ -282,7 +282,7 @@
                 }
             }
 
-            ///////////////////   SLIDESHOW
+            ///////////////////   LANDING PAGE SLIDESHOW
 
             const amountOfSlidshowImages = 5
 
@@ -308,8 +308,6 @@
 
             function changeSlideshowImg (imgID) {
 
-                //console.log("show image "+ imgID);
-
                 for (let i=0; i<amountOfSlidshowImages; i++ ) {
 
 
@@ -322,11 +320,6 @@
                         document.getElementById("slideshowImg"+i).style.opacity = '0%'
 
                     }
-
-                    //if (i<2 && i>0) {
-                    //    document.getElementById("slideshowImg"+i).style.opacity = '100%'
-                    //}
-
 
                 }
 
@@ -346,6 +339,70 @@
             }
 
             setInterval(runSlideshow, 3000);
+
+
+
+            ///////////////////   INFO PAGE SLIDESHOW
+
+            const amountOfInfoImages = 3
+
+
+            function displayInfoSlideshow () {
+
+
+                for (let i=0; i<amountOfInfoImages; i++ ) {
+                    document.getElementById("infoslideshowwrap").innerHTML += '<div class = "slideshowinfoimg" id = "slideshowinfoimg'+ i +'" ></div>';
+                    document.getElementById("slideshowinfoimg"+i).style.background = 'url("assets/info/info_'+i+'.jpg") no-repeat center';
+                    
+                    document.getElementById("slideshowinfoimg"+i).style.backgroundSize = 'cover';
+                    
+
+
+                    if (i>0) {
+                        document.getElementById("slideshowImg"+i).style.opacity = '0%';
+
+                    }
+
+                }
+
+            }
+
+            displayInfoSlideshow();
+
+            function changeInfoSlideshowImg (imgInfoID) {
+
+                for (let i=0; i<amountOfInfoImages; i++ ) {
+
+
+
+                    if (i == imgInfoID) {
+
+                        document.getElementById("slideshowinfoimg"+i).style.opacity = '100%'
+                        
+                    } else {
+                        document.getElementById("slideshowinfoimg"+i).style.opacity = '0%'
+
+                    }
+
+                }
+
+            }
+
+            var currentInfoSlide = 1;
+
+            function runInfoSlideshow () {
+                changeInfoSlideshowImg(currentInfoSlide);
+
+                if (currentInfoSlide < amountOfInfoImages-1) {
+                    currentInfoSlide++;
+                } else if (currentInfoSlide = amountOfInfoImages-1) {
+                    currentInfoSlide = 0;
+
+                }
+            }
+
+            setInterval(runInfoSlideshow, 3000);
+
 
 
 
@@ -414,7 +471,7 @@
 
 
 
-            //////////////   INFO SCROLL
+            //////////////   INFO SCROLL TO MAP
 
             var transAmount = 0;
             var transSpeed = (window.innerWidth/100)*1.5;
@@ -425,25 +482,88 @@
                 var y = event.deltaY;
                 var currentSize = event.target.style.width;
                 if (y > 0 && infoScrollPos < 67) {
-                    document.getElementById("infocontent").style.transform = 'translate('+ transAmount +'px)';
-                    document.getElementById("infocontent2").style.transform = 'translate('+ transAmount +'px)';
+                    document.getElementById("infocontent").style.transform = 'translate(-100%)';
+                    document.getElementById("infomap").style.transform = 'translate(-100%)';
+                    document.getElementById("infomaptext").style.transform = 'translate(-100%)';
 
-                    infoScrollPos +=1;
-                    console.log(infoScrollPos);
+
+                    infoScrollPos = 1;
+                    //console.log(infoScrollPos);
 
 
                     transAmount -= transSpeed;
                 } else if (y < 0 && infoScrollPos > 0){
-                    document.getElementById("infocontent").style.transform = 'translate('+ transAmount +'px)';
-                    document.getElementById("infocontent2").style.transform = 'translate('+ transAmount +'px)';
+                    document.getElementById("infocontent").style.transform = 'translate(0%)';
+                    document.getElementById("infomap").style.transform = 'translate(100%)';
+                    document.getElementById("infomaptext").style.transform = 'translate(100%)';
 
-                    transAmount += transSpeed;
+                    //transAmount += transSpeed;
 
-                    infoScrollPos -=1;
-                    console.log(infoScrollPos);
+                    setTimeout(() => infoScrollPos = 0, 1500);
+                    //console.log(infoScrollPos);
 
 
                 }
+            }
+
+
+
+
+            ///////////////   HOMEPAGE TEXT ANIMATE
+
+
+            function hompageAnimate (from) {
+
+
+                if (from == 'slide1') {
+                    document.getElementById("homepagetext1").style.transform = 'translateY(0px)';
+                    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(0px)';
+                    document.getElementById("homepagetext2").style.transform = 'translateY(0px)';
+                    document.getElementById("homepageLOGO").style.transform = 'translateY(0px)';
+
+
+                }
+
+                if (from == 'slide0') {
+                    document.getElementById("homepagetext1").style.transform = 'translateY(300px)';
+                    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(300px)';
+                    document.getElementById("homepagetext2").style.transform = 'translateY(300px)';
+                    document.getElementById("homepageLOGO").style.transform = 'translateY(300px)';
+
+                    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
+                    document.getElementById("homepagetext1").style.transition = 'translate, 1s';
+                    document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
+                    document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
+
+
+
+                }
+
+                if (from == 'slide2') {
+                    document.getElementById("homepagetext1").style.transform = 'translateY(-300px)';
+                    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(-300px)';
+                    document.getElementById("homepagetext2").style.transform = 'translateY(-300px)';
+                    document.getElementById("homepageLOGO").style.transform = 'translateY(-300px)';
+
+                    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 1.4s';
+                    document.getElementById("homepagetext1").style.transition = 'translate, 1.2s';
+                    document.getElementById("homepageLOGO").style.transition = 'translate, 1s';
+                    document.getElementById("homepagetext2").style.transition = 'translate, 0.8s';
+
+                    
+                
+
+
+
+
+
+
+                }
+
+
+
+
+
             }
 
 

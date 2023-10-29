@@ -73,13 +73,17 @@ function displayHeader() {
     if (slide == 2) {
         //gsap.to(".header", {opacity: 100, duration: 3});
         document.getElementById("header").style.opacity = '100%';
+        document.getElementById("homepagecontent").style.opacity = '0%';
+
+        hompageAnimate('slide2');
+
+
 
 
     };
     if (slide == 1) {
         //gsap.to(".header", {opacity: 0, duration: 3});
 
-        document.getElementById("header").style.opacity = '0%';
 
 
     }
@@ -87,15 +91,19 @@ function displayHeader() {
     if (slide == 1) {
         //gsap.to(".header", {opacity: 100, duration: 3});
         document.getElementById("homepagecontent").style.opacity = '100%';
+        document.getElementById("header").style.opacity = '0%';
+
+        hompageAnimate('slide1');
+
         // document.getElementById("homepageNICKTUDORimage").style.left = '100px';
 
 
 
     };
-    if (slide == 2 || slide == 0) {
-        //gsap.to(".header", {opacity: 0, duration: 3});
+    if (slide == 0) {
+        hompageAnimate('slide0');
 
-        document.getElementById("homepagecontent").style.opacity = '0%';
+
 
 
     }
@@ -306,6 +314,32 @@ function moveTouch(e) {
     //        console.log("prevented default")
     //    }
     //}
+}
+
+function goToSustainability () {
+
+    slide = 3;
+    current = -window.innerHeight*3;
+
+    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+
+    clickMenu ();
+
+
+
+}
+
+function goToInformation () {
+
+    slide = 4;
+    current = -window.innerHeight*4;
+
+    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+
+    clickMenu ();
+
+
+
 }
 
 
