@@ -193,7 +193,7 @@ section {
     color: #e52421;
     font-size: 19px;
 
-    width: 70%;
+    width: 55%;
     margin: auto;
     height: 70%;
 
@@ -221,7 +221,7 @@ section {
 
     position:absolute;
     transition: translate, 0.8s;
-    width:70%;
+    width:55%;
     transform: translateY(300px);
 
     top: 15%;
@@ -232,7 +232,7 @@ section {
     position:absolute;
 
     top:28%;
-    width: 70%;
+    width: 55%;
     text-align: justify;
     text-align-last: center;
     transform: translateY(300px);
@@ -245,7 +245,7 @@ section {
 #homepageLOGO {
 
     position: absolute;
-    width:70%;
+    width:55%;
     top:40%;
     transform: translateY(300px);
 
@@ -257,7 +257,7 @@ section {
 
 #homepagetext2 {
     position: absolute;
-    width: 70%;
+    width: 55%;
 
     top:58%;
 
