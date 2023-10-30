@@ -506,8 +506,8 @@ section {
 #poverlaybc {
     position:absolute;
 
-    background-color: black;
-    opacity: 90%;
+    background-color: #2c1e05;
+    opacity: 88%;
     height: 100%;
     width: 100%;
 
@@ -944,7 +944,7 @@ section {
 
 
 #infopage {
-    background-color: #473416;
+    background-color: #3c2b0e;
     color: #faf7ed;
     width: 100%;
 
