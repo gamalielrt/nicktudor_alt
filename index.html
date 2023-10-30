@@ -76,13 +76,6 @@
     <main>
         <div id = "slideshowdiv">
             <div id = "slideshow">
-                <!--<div class = "slideshowImg" id = "slideshowImg1" ></div>
-                <div class = "slideshowImg" id = "slideshowImg2" ></div>
-                <div class = "slideshowImg" id = "slideshowImg3" ></div>
-                <div class = "slideshowImg" id = "slideshowImg4" ></div>
-                <div class = "slideshowImg" id = "slideshowImg5" ></div>-->
-
-
             </div>
         </div>
 
@@ -150,9 +143,18 @@
             <section id ="infopage">
                 <div id ="infopagecanvas" onwheel="infoScroll(event)">
                     <div id = "infocontent">
-                        <div id = "infoslideshowwrap">
+                        <div id = "infoslideshowwrap"></div>
+                        <div id = "moreinfotext">
+                            <div id = "moreinfop1">My workshop is based on a farm on the Dengie Peninsula, Essex, in a small village called Bradwell-on-Sea. I work across London, the south-east and further afield on projects for private clients, galleries, architects and artists. </div>
+                            <br><div id = "moreinfop2">I am mostly self taught, although I come from a family with engineers, carpenters and architects, and enjoyed making things from a young age. After finishing art school I worked in London for a leading art and design fabrication studio,  across the woodwork, metalwork and casting departments, starting as a junior fabricator, and leaving as a lead fabricator. I set up my own practice in 2018 in order to take greater control over the projects I take on, and to redirect my work towards more sustainable practices and projects. </div>
+                            <br><div id = "moreinfop3">I work as both designer and maker, but on occasion I provide consultancy and fabrication services for clients. The scale of my projects varies greatly, from single pieces of furniture to buildings, shop fit-outs or large-scale art installations. Although I often work independently, I have a great network of colleagues with similar or entirely different specialisms which allows me to work across complex projects of various scales. </div>
+                            <br><div id = "moreinfop4">I’m always interested in collaboration, hearing about projects and discussions about art, architecture, design, making and sustainability. </div>
+                            <br><div id = "moreinfop5">The majority of my work is bespoke, I really enjoy theis process of responding to the unique requirements and circumstances of individuals. It allows me to be inventive, challenge my skills and evaluate how best to use material. However I also have a small range of furniture that is made-to-order, which allows for a level of customisation in material and size. </div>
+                            <br><div id = "moreinfop6">If you have a project you’d like to discuss, an item you’d like to order or an idea you’d like to explore, please get in touch. </div>
+
+
                         </div>
-                        <div id="infodownarrow"><img src ="assets/icons/arrowdown.png"></div>
+                        <div id="infodownarrow" onClick="clickMoreInfo()"><img src ="assets/icons/arrowdown.png"></div>
 
                     </div>
 
@@ -478,32 +480,50 @@
 
             var transAmount = 0;
             var transSpeed = (window.innerWidth/100)*1.5;
-            var infoScrollPos = 0
+            var mapEnabled = false;
 
             function infoScroll(event) {
 
                 var y = event.deltaY;
                 var currentSize = event.target.style.width;
-                if (y > 0 && infoScrollPos < 67) {
-                    document.getElementById("infocontent").style.transform = 'translate(-100%)';
-                    document.getElementById("infomap").style.transform = 'translate(-100%)';
-                    document.getElementById("infomaptext").style.transform = 'translate(-100%)';
+                if (y > 60 && mapEnabled == false) {
+
+                    console.log(Math.round(document.getElementById("moreinfotext").scrollTop), Math.round(document.getElementById("moreinfotext").scrollHeight)-document.getElementById("moreinfotext").offsetHeight);
+                    if(moreInfoOpen == true) {
+                        if (Math.round(document.getElementById("moreinfotext").scrollTop) == Math.round(document.getElementById("moreinfotext").scrollHeight)-document.getElementById("moreinfotext").offsetHeight) {
+
+                            document.getElementById("infocontent").style.transform = 'translate(-100%)';
+                            document.getElementById("infomap").style.transform = 'translate(-100%)';
+                            document.getElementById("infomaptext").style.transform = 'translate(-100%)';
+
+                            mapEnabled = true;
+                            //console.log(infoScrollPos);
+
+                        }
+
+                    } else if (moreInfoOpen == false) {
+                        document.getElementById("infocontent").style.transform = 'translate(-100%)';
+                        document.getElementById("infomap").style.transform = 'translate(-100%)';
+                        document.getElementById("infomaptext").style.transform = 'translate(-100%)';
+
+                        mapEnabled = true;
 
 
-                    infoScrollPos = 1;
-                    //console.log(infoScrollPos);
+                    }
 
 
-                    transAmount -= transSpeed;
-                } else if (y < 0 && infoScrollPos > 0){
+            
+
+
+                    //transAmount -= transSpeed;
+                } else if (y < 0 && mapEnabled == true){
                     document.getElementById("infocontent").style.transform = 'translate(0%)';
                     document.getElementById("infomap").style.transform = 'translate(100%)';
                     document.getElementById("infomaptext").style.transform = 'translate(100%)';
 
                     //transAmount += transSpeed;
 
-                    setTimeout(() => infoScrollPos = 0, 1500);
-                    //console.log(infoScrollPos);
+                    setTimeout(() => mapEnabled = false, 1500);
 
 
                 }

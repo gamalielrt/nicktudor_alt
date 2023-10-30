@@ -989,6 +989,7 @@ section {
     height: 70%;
     overflow: hidden;
 
+
     
 }
 
@@ -999,12 +1000,84 @@ section {
     height: 70%;
 
     opacity: 100%;
-    transition: opacity 1.5s ;
+    transition: opacity 1.5s, height 2s ;
+
+
+    
 
 
 
 
 }
+
+#moreinfotext {
+    position:absolute;
+    left: 15%;
+    top: 25%;
+    width: 70%;
+    height: 60%;
+    overflow: hidden;
+
+    font-size: 17px;
+
+
+
+}
+
+#moreinfop1 {
+    
+    position: relative;
+    transform: translateY(100vh);
+    transition: transform 2s;
+    opacity: 0%;
+
+}
+#moreinfop2 {
+    position: relative;
+    transform: translateY(100vh);
+    transition: transform 2s;
+    opacity: 0%;
+
+
+
+}
+#moreinfop3 {
+    position: relative;
+    transform: translateY(100vh);
+    transition: transform 2s;
+    opacity: 0%;
+
+
+
+}
+#moreinfop4 {
+    position: relative;
+    transform: translateY(100vh);
+    transition: transform 2s;
+    opacity: 0%;
+
+
+
+}
+#moreinfop5 {
+    position: relative;
+    transform: translateY(100vh);
+    transition: transform 2s;
+    opacity: 0%;
+
+
+
+}
+#moreinfop6 {
+    position: relative;
+    transform: translateY(100vh);
+    transition: transform 2s;
+    opacity: 0%;
+
+
+
+}
+
 
 #infodownarrow {
     position: absolute;
@@ -1016,7 +1089,8 @@ section {
 
     cursor: pointer;
 
-    /*transform: translateY(300px) ;*/
+    transition: transform, 2s;
+
 
 }
 

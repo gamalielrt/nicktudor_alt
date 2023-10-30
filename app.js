@@ -188,24 +188,42 @@ function wheelFunc (e) {
 
                 }
             } else {
-                if (infoScrollPos == 0) {
-                    //console.log("swipe down")
+                if (mapEnabled == false) {
+                    if(moreInfoOpen == true) {
+                        if (Math.round(document.getElementById("moreinfotext").scrollTop) == 0) {
+                            
+                            canSwipe = false;
+                            current += window.innerHeight;
+                            
+                            
+                            slide--;
+                            console.log(slide, current);
+                            gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+                            
+                            
+                            setTimeout(() => {
+                                canSwipe = true;
+                            }, 600);
+                            displayHeader();
+                        }
+                    } else {
+
+                        canSwipe = false;
+                        current += window.innerHeight;
+                        
+                        
+                        slide--;
+                        console.log(slide, current);
+                        gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+                        
+                        
+                        setTimeout(() => {
+                            canSwipe = true;
+                        }, 600);
+                        displayHeader();
 
 
-                    canSwipe = false;
-                    current += window.innerHeight;
-                    
-                    
-                    slide--;
-                    console.log(slide, current);
-                    //gsap.to(".content", {y:"+="+window.innerHeight, duration: 1, ease: "power4"});
-                    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
-                    
-                    
-                    setTimeout(() => {
-                        canSwipe = true;
-                    }, 600);
-                    displayHeader();
+                    }
                     
                 }
 
@@ -337,6 +355,8 @@ function goToInformation () {
     gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
     clickMenu ();
+
+    clickMoreInfo ();
 
 
 
