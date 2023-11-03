@@ -133,8 +133,28 @@
             </section>
             <section id ="sustainabilitypage">
                 <div id="sustainabilitycontent">
-                    <div id = "sustainabilityimagewrap">
+                    <div id = "sustainabilityimagewrap" onClick ="displaySusOverlay ()">
                         <img id = "sustainabilityimage" src = "assets/logos/sustainanimation3.gif">
+                    </div>
+
+                    <div id ="susoverlaywrap">
+                        <div id="susoverlaybackground" onClick="displaySusOverlay()"></div>
+                        <div id = "susXdiv" onClick="displaySusOverlay()"><img id="susX" src="assets/icons/x.png"></div>
+                        <div id ="sustext">
+                            <div id ="sustextheader">Plant a tree, use a tree, grow a tree, plant a tree, use a tree, grow a tree. </div>
+                            <br><div id ="sustextp1">Sustainability is a continuous and ongoing concern. It’s also an exciting framework to design and make, providing a challenge that needs to be met, and offers more scope for ingenuity than limitation. Using timber doesn’t resolve the sustainability problem, but it is an excellent place to start. It is regenerative, sequesters carbon as it grows, and stores it once in use. It is incredibly versatile, lending itself to every scale I work at, from buildings to door knobs.</div>
+                            <br><div id ="sustextp2">Working with timber today sees you working as a medieval carpenter or on the cutting edge of current technology, and allows a choice in where energy is best spent. Its historic use enriches the design phase too, with centuries of reference material to work with and inform both construction and aesthetic. I am always reviewing how I source timber, working with local arborists and forestry contractors where possible for solid timbers, and local importers for sheet materials. </div>
+                            <br><div id ="sustextp3">However, timber can’t be used for everything, but where this is the case, it offers an opportunity to select materials best suited for the job. This could be the case for a building’s foundations or a wardrobe’s hinges, in any case I endeavour to use the best quality materials, hardware, fixings and fasteners, to ensure longevity and efficient outcomes. </div>
+                            <br><div id ="sustextp4">Sustainability can represent an expensive choice in comparison to mass manufacture; it requires us to think more carefully about what we buy, what we value and how we look after things. For me these choices have always been enriching; well made things have longevity, a narrative, a sense of value, and a resistance to the disposable consumerism we are so used to. </div>
+
+
+
+                        </div>
+                        <div id ="susoverlaygifwrap">
+                            <img id = "sustainoverlaygif" src = "assets/logos/butterflies.gif">
+
+                        </div>
+
                     </div>
                 </div>
 
@@ -143,7 +163,9 @@
             <section id ="infopage">
                 <div id ="infopagecanvas" onwheel="infoScroll(event)">
                     <div id = "infocontent">
-                        <div id = "infoslideshowwrap"></div>
+                        <div id = "infoslideshowwrap" ></div>
+                        <div id = "infoslideshowclicker" onClick ="clickMoreInfo()"></div>
+
                         <div id = "moreinfotext">
                             <div id = "moreinfop1">My workshop is based on a farm on the Dengie Peninsula, Essex, in a small village called Bradwell-on-Sea. I work across London, the south-east and further afield on projects for private clients, galleries, architects and artists. </div>
                             <br><div id = "moreinfop2">I am mostly self taught, although I come from a family with engineers, carpenters and architects, and enjoyed making things from a young age. After finishing art school I worked in London for a leading art and design fabrication studio,  across the woodwork, metalwork and casting departments, starting as a junior fabricator, and leaving as a lead fabricator. I set up my own practice in 2018 in order to take greater control over the projects I take on, and to redirect my work towards more sustainable practices and projects. </div>
@@ -154,7 +176,7 @@
 
 
                         </div>
-                        <div id="infodownarrow" onClick="clickMoreInfo()"><img src ="assets/icons/arrowdown.png"></div>
+                       <!-- <div id="infodownarrow" onClick="clickMoreInfo()"><img src ="assets/icons/arrowdown.png"></div>-->
 
                     </div>
 
@@ -614,6 +636,8 @@
     <script src="./projects.js"></script>
     <script src="./images.js"></script>
     <script src="./info.js"></script>
+    <script src="./sustainability.js"></script>
+
 
 
     <script src="./illustrations.js"></script>

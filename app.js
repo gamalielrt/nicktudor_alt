@@ -77,12 +77,17 @@ function displayHeader() {
 
         hompageAnimate('slide2');
 
+        document.getElementById("slideshowdiv").style.display = 'none'
+
 
 
 
     };
     if (slide == 1) {
         //gsap.to(".header", {opacity: 0, duration: 3});
+
+        document.getElementById("slideshowdiv").style.display = 'block'
+
 
 
 
@@ -342,6 +347,7 @@ function goToSustainability () {
     gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
     clickMenu ();
+    displaySusOverlay();
 
 
 

@@ -1,14 +1,14 @@
-var infoDownArrow = document.getElementById("infodownarrow");
+//var infoDownArrow = document.getElementById("infodownarrow");
 
 var moreInfoOpen = false;
 
 function clickMoreInfo () {
     if (moreInfoOpen == false) {
-        infoDownArrow.style.transform = 'rotate(180deg)';
+        //infoDownArrow.style.transform = 'rotate(180deg)';
         moreInfoOpen = true;
 
         for (let i=0; i<amountOfInfoImages; i++ ) {
-            document.getElementById("slideshowinfoimg"+i).style.height = '10%';
+            document.getElementById("slideshowinfoimg"+i).style.height = '0%';
             
         }
 
@@ -45,7 +45,7 @@ function clickMoreInfo () {
 
 
     } else if (moreInfoOpen == true) {
-        infoDownArrow.style.transform = 'rotate(0deg)';
+        //infoDownArrow.style.transform = 'rotate(0deg)';
         moreInfoOpen = false;
 
         for (let i=0; i<amountOfInfoImages; i++ ) {
