@@ -18,7 +18,7 @@
     <div id="header">
         <div id = "menubar">
             <div id = "menubarcontent">
-                <img id = "menubarlogo" src = "assets/logos/NICK-TUDOR-YELLOW.png">
+                <img id = "menubarlogo" src = "assets/logos/NICK-TUDOR-YELLOW.png" onClick = "goToHomePage ()">
                 <div id = "menuicon" >
                     <div id="hamburgericon" onclick="clickMenu()">
                         <span></span>
@@ -30,19 +30,29 @@
             </div>
             <div id = "menu">
 
+                <div id = "homeBtn" onClick = "goToHomePage()">Home</div>
+
+
                 <div id="projectcatagorybtns">
-                    <div id = "allBtn" onClick = "filter('all')">All</div>
+
+                    <div id = "allBtn" onClick = "filter('all')">Projects</div>
                     <div id = "architectureBtn" onClick = "filter('Architecture')">Architecture</div>
                     <div id = "artBtn" onClick = "filter('Art')">Art</div>
                     <div id = "furnitureBtn" onClick = "filter('Furniture')">Furniture</div>
                     <div id = "interiorBtn" onClick = "filter('Interior')">Interior</div>
                 </div>
-                <div id="sustainabilitybtn" onClick = "goToSustainability()">
+
+
+                <div id="sustainabilityBtn" onClick = "goToSustainability()">
                     Sustainability
                 </div>
-                <div id="informationbtn" onClick = "goToInformation()">
-                    Information
+                <div id="aboutmeBtn" onClick = "goToInformation()">
+                    About Me
                 </div>
+                <div id="contactBtn" onClick = "goToInformation()">
+                    Contact
+                </div>
+
         
             </div>
             <div id = "projectoverlay">
@@ -83,7 +93,7 @@
             
             <section id ="landingpage">
                 <div id = "startlogo">
-                    <img id="startlogoLOGOimage" src="assets/logos/NICK-TUDOR-LOGO-OFF-WHITE.png">
+                    <img id="startlogoLOGOimage" src="assets/logos/Face-OFF-WHITE.png">
                 </div>
     
             </section>
@@ -95,7 +105,7 @@
                     <p id = "homepagetext1">I’m a carpenter based between London and Essex, designing and making bespoke furniture, buildings and architectural features. I favour clean, functional forms that promote the materials I use, and to highlight the ornamentation I employ sparingly.</p> 
                     <div id="homepageLOGO"><img id="homepageLOGOimage" src="assets/logos/FACE-RED.png"></div>
                     <p id = "homepagetext2">It’s important to me that my work reflects the character of its surroundings, and I value the privilege to work within context of a persons life. I want to create sustainable outcomes of lasting quality; to contribute positive change to the built environment. </p>
-                    <div id="homepagedownarrow"><img src ="assets/icons/arrowdown.png"></div>
+                    <div id="homepagedownarrow"><img src ="assets/icons/arrowdown.png" onClick ="goToProjects ()"></div>
                 </div>
     
             </section>
@@ -510,7 +520,7 @@
                 var currentSize = event.target.style.width;
                 if (y > 60 && mapEnabled == false) {
 
-                    console.log(Math.round(document.getElementById("moreinfotext").scrollTop), Math.round(document.getElementById("moreinfotext").scrollHeight)-document.getElementById("moreinfotext").offsetHeight);
+                    //console.log(Math.round(document.getElementById("moreinfotext").scrollTop), Math.round(document.getElementById("moreinfotext").scrollHeight)-document.getElementById("moreinfotext").offsetHeight);
                     if(moreInfoOpen == true) {
                         if (Math.round(document.getElementById("moreinfotext").scrollTop) == Math.round(document.getElementById("moreinfotext").scrollHeight)-document.getElementById("moreinfotext").offsetHeight) {
 

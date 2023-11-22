@@ -50,106 +50,201 @@ imageList = new Images();
 
 
 function initImages () {
-    
-    for ( let i=1; i<6; i++ ) {
 
-        imageList.newImage('0_' + i +'.jpg', '0', i);
+
+
+    ////// LOOP TO INIT IMAGES
+
+    for ( let i=0; i<projectList.numberOfProjects; i++) {
+
+        for ( let ii=0; ii<projectList.projects[i].numofimages; ii++ ) {
+
+            let x = ii+1;
+    
+            imageList.newImage(i+'_' + x +'.jpg', i, ii);
+        
+        
+        }
+    
+
+
+    }
+
+        ////// UNUSED CODE TO INIT IMAGES
+
+
+    /*
+
+    //0
+    
+    for ( let i=0; i<5; i++ ) {
+
+        let x = i+1;
+
+        imageList.newImage('0_' + x +'.jpg', '0', i);
     
     
     }
 
-    for ( let i=1; i<8; i++ ) {
+    //1
 
-        imageList.newImage('1_' + i +'.jpg', '1', i);
+    for ( let i=0; i<7; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('1_' + x +'.jpg', '1', i);
     
     
     }
 
-    for ( let i=1; i<6; i++ ) {
+    //2
 
-        imageList.newImage('2_' + i +'.jpg', '2', i);
+    for ( let i=0; i<5; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('2_' + x +'.jpg', '2', i);
     
     
     }
 
-    for ( let i=1; i<6; i++ ) {
+    //3
 
-        imageList.newImage('3_' + i +'.jpg', '3', i);
+    for ( let i=0; i<5; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('3_' + x +'.jpg', '3', i);
     
     
     }
 
-    for ( let i=1; i<6; i++ ) {
+    //4
 
-        imageList.newImage('4_' + i +'.jpg', '4', i);
+    for ( let i=0; i<5; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('4_' + x +'.jpg', '4', i);
     
     
     }
 
-    for ( let i=1; i<5; i++ ) {
+    //5
 
-        imageList.newImage('5_' + i +'.jpg', '5', i);
+    for ( let i=0; i<4; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('5_' + x +'.jpg', '5', i);
     
     
     }
 
-    for ( let i=1; i<4; i++ ) {
+    //6
 
-        imageList.newImage('6_' + i +'.jpg', '6', i);
+    for ( let i=0; i<3; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('6_' + x +'.jpg', '6', i);
     
     
     }
 
-    for ( let i=1; i<7; i++ ) {
+    //7
 
-        imageList.newImage('7_' + i +'.jpg', '7', i);
+    for ( let i=0; i<6; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('7_' + x +'.jpg', '7', i);
     
     
     }
 
-    for ( let i=1; i<8; i++ ) {
+    //8
 
-        imageList.newImage('8_' + i +'.jpg', '8', i);
+    for ( let i=0; i<7; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('8_' + x +'.jpg', '8', i);
     
     
     }
 
-    for ( let i=1; i<4; i++ ) {
+    //9
 
-        imageList.newImage('9_' + i +'.jpg', '9', i);
+    for ( let i=0; i<3; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('9_' + x +'.jpg', '9', i);
     
     
     }
 
-    for ( let i=1; i<3; i++ ) {
+    //10
 
-        imageList.newImage('10_' + i +'.jpg', '10', i);
+    for ( let i=0; i<2; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('10_' + x +'.jpg', '10', i);
     
     
     }
 
-    for ( let i=1; i<3; i++ ) {
+    //11
 
-        imageList.newImage('11_' + i +'.jpg', '11', i);
+    for ( let i=0; i<2; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('11_' + x +'.jpg', '11', i);
     
     
     }
 
-    for ( let i=1; i<10; i++ ) {
+    //12
 
-        imageList.newImage('12_' + i +'.jpg', '12', i);
+    for ( let i=0; i<9; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('12_' + x +'.jpg', '12', i);
     
     
     }
 
-    for ( let i=1; i<9; i++ ) {
+    //13
 
-        imageList.newImage('13_' + i +'.jpg', '13', i);
+    for ( let i=0; i<8; i++ ) {
+
+        let x = i+1;
+
+
+        imageList.newImage('13_' + x +'.jpg', '13', i);
     
     
     }
 
+    
 
+*/
 
 
 

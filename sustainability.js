@@ -14,8 +14,10 @@ function displaySusOverlay () {
 
         document.getElementById("susXdiv").style.opacity = '100%';
 
-        document.getElementById("sustainoverlaygif").style.opacity = '100%';
-        //gsap.to(sustainoverlaygif, {opacity: '100%', duration: 2, ease: "power4"});
+        setTimeout(() => {
+            document.getElementById("sustainoverlaygif").style.opacity = '100%';
+
+          }, "1000");
 
 
         document.getElementById("sustext").style.pointerEvents = 'auto';

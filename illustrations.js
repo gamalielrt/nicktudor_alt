@@ -16,7 +16,7 @@ var startScreen = pagecontent.scrollTop
 function resetIllustration1 () {
     setTimeout(() => {
         initillustration1()
-    }, Math.round((Math.random() * 2000) + 1000));
+    }, Math.round((Math.random() * (8000-4000)) + 4000));
 }
 
 
@@ -25,9 +25,11 @@ function initillustration1() {
 
 
 
-    illustration1.innerHTML = '<img id = "ill1" class = "illustration" src = "./assets/illustrations/ill'+ Math.round((Math.random() * 9)) + '.png">'
+    illustration1.innerHTML = '<img id = "ill1" class = "illustration" src = "./assets/illustrations/ill'+ Math.round((Math.random() * 9)) + '.png">';
 
-    illustration1.style.height = Math.round((Math.random() * 200) + 150) + 'px';
+    //Math.floor(Math.random() * (max - min) ) + min;
+
+    illustration1.style.height = Math.round((Math.random() * (250 - 100)) + 100) + 'px';
 
 
     spaceHeight1 = document.body.offsetHeight - illustration1.style.height;
@@ -54,7 +56,7 @@ function initillustration1() {
 
         illustration1.style.opacity = "0%";
         resetIllustration1()
-    }, Math.round((Math.random() * 6000) + 4000));
+    }, Math.round((Math.random() * (6000-4000)) + 4000));
 
 
 }
@@ -62,7 +64,7 @@ function initillustration1() {
 function resetIllustration2 () {
     setTimeout(() => {
         initillustration2()
-    }, Math.round((Math.random() * 5000) + 4000));
+    }, Math.round((Math.random() * (5000-4000)) + 4000));
 }
 
 

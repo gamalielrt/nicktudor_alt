@@ -2,7 +2,7 @@
 
 
 class Project {
-    constructor(id, date, name, image, description, type, position) {
+    constructor(id, date, name, image, description, type, position, numofimages) {
         this._id = id;
         this._date = date;
         this._name = name;
@@ -10,6 +10,8 @@ class Project {
         this._description = description;
         this._type = type;
         this._position = position;
+        this._numofimages = numofimages;
+
 
     }
     get id() {
@@ -33,6 +35,10 @@ class Project {
     get position() {
         return this._position;
     }
+    get numofimages() {
+        return this._numofimages;
+    }
+
 
 }
 
@@ -41,8 +47,8 @@ class Projects {
         this.projects = [];
     }
 
-    newProject (id, date, name, image, description, type, position) {
-        let a = new Project(id, date, name, image, description, type, position);
+    newProject (id, date, name, image, description, type, position, numofimages) {
+        let a = new Project(id, date, name, image, description, type, position, numofimages);
         this.projects.push(a);
         return a;
     }
@@ -64,7 +70,8 @@ projectList.newProject('0',
                     'martinslane_thumb.jpg',
                     'Following the erection of an insulated timber frame, I completed the carpentry for all other timber elements of this new build house. The larch cladding required 26,000 nails, each fixed through a pilot hole. <p><br><p>I designed and made the canopy and pergola that provides essential solar shade, using complex traditional joints in English grown green douglas fir to demonstrate the discrete level of craft in the building that is otherwise hidden, and to add some visual interest to an otherwise straightforward construction. <p><br><p>Other more common items were also completed; door linings, sills, internal stud walls and bathrooms. ',
                     'Architecture',
-                    'full'
+                    'full',
+                    '5'
 );
 
 ////   1
@@ -75,7 +82,8 @@ projectList.newProject('1',
                     'studiovoltaire_thumb.jpg',
                     "A bed frame I design that was inspired by the resting characters in Bruegel’s ‘The Harvesters’, and the careful storage of their crop atop staddle (or stathol) stones. This version is made from solid Black Poplar, with small areas of natural edge and lots of pip. The frame rest on four hand turned legs. It is designed to be flat-packed and assembled with just an allen key. <p><br><p> It can be made to any size and from a range of timbers.",
                     'Furniture',
-                    'left'
+                    'left',
+                    '7'
 );
 
 
@@ -84,11 +92,12 @@ projectList.newProject('1',
 
 projectList.newProject('2',
                     '10/08/23',
-                    'Adlard',
+                    'Double wardrobe, London, 2023',
                     'adlard_thumb.jpg',
                     'A suspended double wardrobe. Designed for a compact bedroom, I used a curve to soften the projection into the room. <p><br><p> The Alpi Myrtle Burr veneer was reverse slip matched, creating a consistent, subtle and interesting texture across the piece. Bespoke knobs were turned in contrasting black walnut. Simple, economical shelves and and hanging rail occupy the interior, all constructed from sustainable poplar plywood. ',
                     'Interior',
-                    'right'
+                    'right',
+                    '5'
 );
 
 ////   3
@@ -100,7 +109,8 @@ projectList.newProject('3',
                     'frenchcurve_thumb.jpg',
                     'Side table in black walnut.',
                     'Furniture',
-                    'left'
+                    'left',
+                    '5'
 );
 
 ////   4
@@ -112,7 +122,8 @@ projectList.newProject('4',
                     'brightsidecabinets_thumb.jpg',
                     'Sitting inside a refurbished Victorian terraced house, I wanted to reflect the historic character of the building and the modern interventions it had undergone. <p><br><p>I machined an ovolo moulding in oak to form the front of the cabinets. The doors, simple solid oak mortice and tenon frames, feature a discrete finger pull along their bottom edge, while magnets were hidden beneath oak plugs to replace the need for door catches. ',
                     'Interior',
-                    'right'
+                    'right',
+                    '5'
 );
 
 ////   5
@@ -124,7 +135,8 @@ projectList.newProject('5',
                     'houseofvoltaire_thumb.jpg',
                     'Project in collaboration with Josh Malby. We were asked to design, make and install a permanent home for House of Voltaire, a shop selling artworks, limited editions, homewares and clothings by artists and designers to support Studio Voltaire. <p><br><p>We developed the existing identity for the shop, producing a low oak plinth with torus panelling disguising loads of storage. An arch feature inspired by John Soane spans the longest wall of the shop, beneath which a blackened steel shelving system allows for framed artworks and editions to be placed in a salon style. <p><br><p>An oak shelving unit mirrors the central arch on the adjacent wall. ',
                     'Interior',
-                    'full'
+                    'full',
+                    '4'
 );
 
 ////   6
@@ -136,7 +148,8 @@ projectList.newProject('6',
                     'brightsidewardrobe_thumb.jpg',
                     'The doors for this wardrobe are set inside a series of frames separating each wardrobe. Solid English oak runs along the edge between each pair of doors, forming a discrete handle. <p><br><p>Each door was carefully veneered individually with a book-matched pair of veneer leaves all from the same tree to achieve a match across the span of the wardrobe.',
                     'Furniture',
-                    'right'
+                    'right',
+                    '3'
 );
 
 ////   7
@@ -148,7 +161,8 @@ projectList.newProject('7',
                     'mikeshow_thumb.jpg',
                     'I worked with Mike and 3 others in the lead up to this ambitious exhibition bringing together many of the large scale installations from Mike’s career. <p><br><p>In the 3 months leading up to the install we worked in an old Argos warehouse in Orpington, Kent using cobbled together documentation and photographs from the past 3 decades to reconstruct and modify the works for the galleries at the Hayward. <p><br><p>We were joined by various gallery staff and an exhibition build team to complete the gallery install with a 1 month deadline. Beyond the impressive scale of the work, it’s the need for attention to Mike’s idiosyncratic approach to construction, detailing and hardware that prompts me to show this project.',
                     'Art',
-                    'left'
+                    'left',
+                    '6'
 );
 
 ////   8
@@ -160,7 +174,8 @@ projectList.newProject('8',
                     'studiovoltaire_thumb.jpg',
                     'Project in collaboration with Josh Malby. We were asked by Studio Voltaire, London, to design a selection of furniture for they redevelopment project completed in 2021. Consisting primarily of large scale communal tables and the staff desks, I also designed and made their onsite Cafe. <p><br><p>Details like the lancet arch and ebonised oak wedge were a nod toward the historic fabric of the original building, while the birch ply and Forbo linoleum reflect the modernisation undergone through the building’s redevelopment. <p><br><p>The communal tables for the art studios were a particular favourite, using an oak wedge to lock all the parks together without the need for fixings, allowing the tables to be constructed and reconstructed as needed to make additional space in the communal areas.',
                     'Interior',
-                    'right'
+                    'right',
+                    '7'
 );
 
 ////   9
@@ -172,7 +187,8 @@ projectList.newProject('9',
                     'studiovoltaire_thumb.jpg',
                     'A bespoke bed in pippy and brown English oak.',
                     'Furniture',
-                    'full'
+                    'full',
+                    '3'
 );
 
 ////   10
@@ -184,7 +200,8 @@ projectList.newProject('10',
                     'studiovoltaire_thumb.jpg',
                     '',
                     'Art',
-                    'right'
+                    'right',
+                    '2'
 );
 
 ////   11
@@ -196,7 +213,8 @@ projectList.newProject('11',
                     'studiovoltaire_thumb.jpg',
                     '',
                     'Furniture',
-                    'left'
+                    'left',
+                    '2'
 );
 
 ////   12
@@ -208,7 +226,8 @@ projectList.newProject('12',
                     'studiovoltaire_thumb.jpg',
                     '',
                     'Art',
-                    'right'
+                    'right',
+                    '9'
 );
 
 ////   13
@@ -219,7 +238,8 @@ projectList.newProject('13',
                     'studiovoltaire_thumb.jpg',
                     '',
                     'Art',
-                    'right'
+                    'right',
+                    '8'
 );
 
 
@@ -456,7 +476,9 @@ function loadMore () {
         setTimeout( ()=> {document.getElementById("loadmore").style.display = 'none'},1000);
 
         loadMoreClicked = true;
-    
+
+
+        //document.getElementById("projectscontainer").innerHTML += '<br><br><br>'
 
 
     }
@@ -466,6 +488,20 @@ function loadMore () {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -478,37 +514,40 @@ function loadMore () {
 
 
 
-var projIndexSel = 1;
+var projIndexSel = 0;
 
 
 function projectClick (projectIndex) {
  
-     document.getElementById("projectoverlay").style.display = 'block';
-     document.getElementById("illlayer").style.display = 'none';
+    document.getElementById("projectoverlay").style.display = 'block';
+    document.getElementById("illlayer").style.display = 'none';
 
-     document.getElementById("infoslidertitle").innerHTML = projectList.projects[projectIndex].name;
-     document.getElementById("infosliderdescription").innerHTML = '<p><br><p> '+ projectList.projects[projectIndex].description;
-
-
-     document.getElementById("projectbrowser").innerHTML = '';
+    document.getElementById("infoslidertitle").innerHTML = projectList.projects[projectIndex].name;
+    document.getElementById("infosliderdescription").innerHTML = '<p><br><p> '+ projectList.projects[projectIndex].description;
 
 
-     console.log(imageList.images[projectIndex].project)
+    document.getElementById("projectbrowser").innerHTML = '';
 
-     for (let i = 0; i<imageList.numberOfImages; i++) {
 
-        projIndexSel = 1
+    console.log(imageList.images[projectIndex].project, projectList.projects[projectIndex].numofimages);
+
+    for (let i = 0; i<imageList.numberOfImages; i++) {
+
+        projIndexSel = 0;
 
         if (imageList.images[i].project == projectIndex) {
 
             //displaying all images associated to that project
 
-            document.getElementById("projectbrowser").innerHTML += '<div class = "projimageslide" id = "projimageslide'+ imageList.images[i].pindex +'" ><div class = "projimagecontainer"><img class = "projimage" src = "./assets/projects/projectimages/'+projectIndex+'/'+ imageList.images[i].name +'" onclick = "clickProjImage('+ imageList.images[i].pindex +')"></div></div>';
-            
+            //document.getElementById("projectbrowser").innerHTML += '<div class = "projimageslide" id = "projimageslide'+ imageList.images[i].pindex +'" ><div class = "projimagecontainer"><div class ="projimagebackclicker" onclick = "clickProjImageBack('+ imageList.images[i].pindex +')"></div><img class = "projimage" src = "./assets/projects/projectimages/'+projectIndex+'/'+ imageList.images[i].name +'" onclick = "clickProjImage('+ imageList.images[i].pindex +')"></div></div>';
+            //document.getElementById("projectbrowser").innerHTML += '<div class = "projimageslide" id = "projimageslide'+ imageList.images[i].pindex +'" ><div class = "projimagecontainer"><div class ="projimagebackclicker" onclick = "clickProjImageBack('+ projectList.projects[projectIndex].numofimages +')"></div><img class = "projimage" src = "./assets/projects/projectimages/'+projectIndex+'/'+ imageList.images[i].name +'" onclick = "clickProjImage('+ projectList.projects[projectIndex].numofimages +')"></div></div>';
+            document.getElementById("projectbrowser").innerHTML += '<div class = "projimageslide" id = "projimageslide'+ imageList.images[i].pindex +'" ><div class = "projimagecontainer"><img class = "projimage" src = "./assets/projects/projectimages/'+projectIndex+'/'+ imageList.images[i].name +'" onclick = "clickProjImage('+ projectList.projects[projectIndex].numofimages +')"></div></div>';
+
+
             //console.log(document.getElementById("projectbrowser").innerHTML);
 
 
-            if (imageList.images[i].pindex == 1) {
+            if (imageList.images[i].pindex == 0) {
                 document.getElementById("projimageslide"+ imageList.images[i].pindex).style.opacity = '100%';
 
             } else {
@@ -520,33 +559,67 @@ function projectClick (projectIndex) {
         }
 
 
-     }
 
-     console.log(document.getElementById("projectoverlay"))
+    }
+
+    //console.log(document.getElementById("projectoverlay"), imageList.images[i].pindex);
+    document.getElementById("projectbrowser").innerHTML += '<div class ="projimagebackclicker" onclick = "clickProjImageBack('+ projectList.projects[projectIndex].numofimages +')"></div>';
+
+
+
      
- }
+}
 
 
- function clickProjImage (pindex) {
+function clickProjImage (numofimages) {
     
-    console.log(pindex,projIndexSel);
 
-    if (projIndexSel < pindex) {
+    if (projIndexSel < numofimages-1) {
 
         document.getElementById("projimageslide"+ projIndexSel).style.opacity = '0%';
         projIndexSel++;
         document.getElementById("projimageslide"+ projIndexSel).style.opacity = '100%';
 
-    } else if ( projIndexSel == pindex){
+    } else if ( projIndexSel == numofimages-1){
 
         document.getElementById("projimageslide"+ projIndexSel).style.opacity = '0%';
-        projIndexSel = 1;
+        projIndexSel = 0;
         document.getElementById("projimageslide"+ projIndexSel).style.opacity = '100%';
 
 
     }
 
+    console.log(numofimages,projIndexSel, 'NEXT');
+
+
 }
+
+function clickProjImageBack (numofimages) {
+
+    //projIndexSel--;
+
+    
+
+    if (projIndexSel > 0) {
+
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '0%';
+        projIndexSel--;
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '100%';
+
+    } else if ( projIndexSel == 0){
+
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '0%';
+        projIndexSel = numofimages-1;
+        document.getElementById("projimageslide"+ projIndexSel).style.opacity = '100%';
+
+
+    }
+
+    console.log(numofimages, projIndexSel, 'BACK');
+
+
+}
+
 
 
 var infoSlider = document.getElementById("infoslider");
@@ -610,7 +683,6 @@ function clickinfoSlider () {
 function filter (catagory) {
 
     loadMore ();
-    clickMenu ();
 
     
 
@@ -665,6 +737,9 @@ function filter (catagory) {
 
 
     } else {
+
+        clickMenu ();
+
 
 
     for (let i=0; i < projectList.numberOfProjects; i++) {

@@ -113,9 +113,13 @@ section {
 }
 
 #startlogoLOGOimage {
-    width: 360px;
+    /*width: 360px;
     position:absolute;
-    top: calc(50% - 180px);
+    top: calc(50% - 180px);*/
+
+    width: 200px;
+    position:absolute;
+    top: calc(50% - 100px);
 
 }
 
@@ -288,6 +292,8 @@ section {
     width: 55%;
     bottom: 15px;
     transform: translateY(300px) ;
+
+    cursor: pointer;
 
 }
 
@@ -634,6 +640,62 @@ section {
 
 }
 
+.projimagebackclicker {
+
+    z-index: 5;
+
+    position: absolute;
+
+    top: 50%;
+    transform: translate(25%, -50%);
+
+
+
+    width:40%;
+    height:80%;
+
+
+
+    pointer-events: all;
+
+
+}
+
+.projimagebackclicker:hover {
+
+    cursor: url('assets/icons/arrowleft.png'), auto;
+
+
+}
+
+.projimagenextclicker {
+
+    z-index: 6;
+
+    position: absolute;
+
+    display: none;
+
+    
+    width:50%;
+    height:100%;
+    left: 50%;
+    /*background-color:#cf82b6;*/
+
+
+    pointer-events: all;
+
+
+
+}
+
+.projimagenextclicker {
+
+    cursor: url('assets/icons/arrowright.png'), auto;
+
+
+}
+
 
 
 
@@ -782,6 +844,8 @@ section {
 
     width: 150px;
     margin: auto;
+
+    cursor: pointer;
 }
 
 #menuicon {
@@ -834,10 +898,17 @@ section {
 }
 
 #projectcatagorybtns {
-    padding-top: 40%;
+    padding-top: 10%;
 
     
 }
+
+#homeBtn {
+    cursor: pointer;
+
+    padding-top: 40%;
+}
+
 
 #allBtn {
     cursor: pointer;
@@ -846,24 +917,33 @@ section {
 
 #architectureBtn {
     cursor: pointer;
+
+    font-size: 20px;
+
 }
 
 #artBtn {
     cursor: pointer;
+    font-size: 20px;
+
 }
 
 #furnitureBtn {
     cursor: pointer;
+    font-size: 20px;
+
 }
 
 #interiorBtn {
     cursor: pointer;
+    font-size: 20px;
+
 }
 
 
 
 
-#sustainabilitybtn {
+#sustainabilityBtn {
 
     cursor: pointer;
 
@@ -871,11 +951,18 @@ section {
 
 }
 
-#informationbtn {
+#aboutmeBtn {
 
     cursor: pointer;
 
     padding-top: 30%;
+
+}
+
+#contactBtn {
+
+    cursor: pointer;
+
 
 }
 
@@ -985,13 +1072,13 @@ section {
 
 
     position:absolute;
-    left:15%;
+    left:25%;
     top:20%;
 
     font-size: 25px;
     color: #faf7ed;
 
-    width:70%;
+    width:50%;
 
     height:50%;
 
@@ -1015,6 +1102,12 @@ section {
     transform: translateY(100vh);
     transition: transform 2s;
     opacity: 0%;
+
+
+
+
+
+
 
 
 
