@@ -99,6 +99,13 @@ section {
 #landingpage {
    /*height: 100vh;*/
 
+   margin: auto;
+
+
+   text-align: center;
+
+
+
 
 }
 
@@ -162,6 +169,28 @@ section {
     transition: opacity 1.5s ;
 
 }
+
+#landingpagedownarrow {
+    position: absolute;
+    z-index: 5;
+
+    width: 100%;
+
+    margin: auto;
+    bottom: 15px;
+    /*transform: translateY(300px) ;*/
+
+    cursor: pointer;
+
+    opacity: 0%;
+
+    transition: opacity 2s ;
+
+
+
+
+}
+
 
 
 
@@ -290,6 +319,7 @@ section {
     position: absolute;
 
     width: 55%;
+
     bottom: 15px;
     transform: translateY(300px) ;
 
@@ -894,31 +924,97 @@ section {
     width:360px;
     right:-400px;
 
-    transition: right 0.5s cubic-bezier(0.0, 0.5, 0.5 ,1.0);
+    padding-top: 20%;
+
+    transition: padding-top 1.2s, right 0.5s cubic-bezier(0.0, 0.5, 0.5 ,1.0);
 }
 
 #projectcatagorybtns {
-    padding-top: 10%;
 
+    height: 0%;
+    
     
 }
 
-#homeBtn {
+.menubtn {
     cursor: pointer;
 
-    padding-top: 40%;
+}
+
+.menubtn:hover {
+    color:#ffdb24;
+
 }
 
 
-#allBtn {
-    cursor: pointer;
+#homeBtnContainer {
+    /*background-color: lime;*/
+
+    height: 15%;
 }
 
+
+#projectsBtnContainer {
+
+    /*background-color: peru;*/
+
+    height: 15%;
+
+    transition: height 1.2s;
+
+}
+
+
+
+
+
+
+#sustainabilityBtnContainer {
+
+    /*background-color: blue;*/
+
+    height: 15%;
+
+
+
+}
+
+#aboutmeBtnContainer {
+
+
+    /*background-color: purple;*/
+
+    height: 15%;
+
+
+
+}
+
+#contactBtnContainer {
+
+    /*background-color: #ffdb24;*/
+
+
+    height: 15%;
+
+
+
+}
 
 #architectureBtn {
     cursor: pointer;
-
     font-size: 20px;
+
+    opacity: 0%;
+
+    transition: opacity 0.5s;
+
+    pointer-events: none;
+
+    /*position:absolute;
+    left:0;
+    right:0;*/
+
 
 }
 
@@ -926,11 +1022,36 @@ section {
     cursor: pointer;
     font-size: 20px;
 
+    opacity: 0%;
+
+    transition: opacity 0.5s;
+
+    pointer-events: none;
+
+
+    /*position:absolute;
+    left:0;
+    right:0;*/
+
+
 }
 
 #furnitureBtn {
     cursor: pointer;
     font-size: 20px;
+
+    opacity: 0%;
+
+    transition: opacity 0.5s;
+
+    pointer-events: none;
+
+
+    /*position:absolute;
+    left:0;
+    right:0;*/
+
+
 
 }
 
@@ -938,33 +1059,23 @@ section {
     cursor: pointer;
     font-size: 20px;
 
-}
+    opacity: 0%;
+
+    transition: opacity 0.5s;
+
+    pointer-events: none;
 
 
 
 
-#sustainabilityBtn {
+    /*position:absolute;
+    left:0;
+    right:0;*/
 
-    cursor: pointer;
 
-    padding-top: 30%;
-
-}
-
-#aboutmeBtn {
-
-    cursor: pointer;
-
-    padding-top: 30%;
 
 }
 
-#contactBtn {
-
-    cursor: pointer;
-
-
-}
 
 
 
@@ -1239,6 +1350,40 @@ section {
     
 }
 
+#infoXdiv {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+
+    cursor: pointer;
+
+    opacity: 0%;
+
+    transition: opacity 0.5s;
+
+    z-index:3;
+
+    pointer-events: auto;
+
+
+}
+
+#infooverlaybackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index:0;
+
+
+
+    pointer-events: none;
+
+    cursor: pointer;
+
+}
+
+
+
 
 
 #infoslideshowwrap {
@@ -1262,13 +1407,18 @@ section {
     height: 70%;
 
     cursor: pointer;
+    pointer-events: all;
 
 
-    z-index: 0;
+
+    z-index: 3;
+
 
 
 
 }
+
+
 
 .slideshowinfoimg {
     position:fixed;
@@ -1289,13 +1439,15 @@ section {
 
 #moreinfotext {
     position:absolute;
-    left: 15%;
+    left: 25%;
     top: 20%;
-    width: 70%;
+    width: 50%;
     height: 60%;
     overflow: hidden;
 
     font-size: 23px;
+    z-index: 2;
+
 
 
 

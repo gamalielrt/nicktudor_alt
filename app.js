@@ -107,6 +107,7 @@ function displayHeader() {
     };
     if (slide == 0) {
         hompageAnimate('slide0');
+        initLandingPageDownArrow ();
 
 
 
@@ -339,7 +340,9 @@ function moveTouch(e) {
     //}
 }
 
-function goToHomePage () {
+function goToLandingPage () {
+
+    initLandingPageDownArrow ();
 
     slide = 0;
     current = 0;
@@ -376,6 +379,26 @@ function goToHomePage () {
 
 
 
+
+
+}
+
+function goToHomePage () {
+
+    slide = 1;
+    current = -window.innerHeight*1;
+
+    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+
+    document.getElementById("homepagecontent").style.opacity = '100%';
+
+
+    hompageAnimate('slide1');
+
+
+
+
+
 }
 
 function goToProjects () {
@@ -399,6 +422,8 @@ function goToProjects () {
     document.getElementById("homepagedownarrow").style.transition = 'translate, 0.6s';
 
     displayHeader();
+
+    
 
 
 
@@ -438,6 +463,29 @@ function goToInformation () {
 
 
 }
+
+function goToContact () {
+
+    slide = 4;
+    current = -window.innerHeight*4;
+
+    gsap.to(".content", {y:current, duration: 1, ease: "power4"});
+
+    clickMenu ();
+
+    //clickMoreInfo ();
+
+    document.getElementById("infocontent").style.transform = 'translate(-100%)';
+    document.getElementById("infomap").style.transform = 'translate(-100%)';
+    document.getElementById("infomaptext").style.transform = 'translate(-100%)';
+
+    mapEnabled = true;
+
+
+
+
+}
+
 
 
 

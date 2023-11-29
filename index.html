@@ -18,7 +18,7 @@
     <div id="header">
         <div id = "menubar">
             <div id = "menubarcontent">
-                <img id = "menubarlogo" src = "assets/logos/NICK-TUDOR-YELLOW.png" onClick = "goToHomePage ()">
+                <img id = "menubarlogo" src = "assets/logos/NICK-TUDOR-YELLOW.png" onClick = "goToLandingPage ()">
                 <div id = "menuicon" >
                     <div id="hamburgericon" onclick="clickMenu()">
                         <span></span>
@@ -30,27 +30,35 @@
             </div>
             <div id = "menu">
 
-                <div id = "homeBtn" onClick = "goToHomePage()">Home</div>
+                <div id = "homeBtnContainer">
+                    <div id = "homeBtn" class = "menubtn" onClick = "goToLandingPage()">Home</div>
+                </div>
 
+                <div id = "projectsBtnContainer">
+                    <div id = "projectsBtn" class = "menubtn" onClick = "clickProjects()">Projects</div>
 
-                <div id="projectcatagorybtns">
+                    <div id="projectcatagorybtns" >
 
-                    <div id = "allBtn" onClick = "filter('all')">Projects</div>
-                    <div id = "architectureBtn" onClick = "filter('Architecture')">Architecture</div>
-                    <div id = "artBtn" onClick = "filter('Art')">Art</div>
-                    <div id = "furnitureBtn" onClick = "filter('Furniture')">Furniture</div>
-                    <div id = "interiorBtn" onClick = "filter('Interior')">Interior</div>
+                        <div id = "architectureBtn" class = "menubtn" onClick = "filter('Architecture')">Architecture</div>
+                        <div id = "artBtn" class = "menubtn" onClick = "filter('Art')">Art</div>
+                        <div id = "furnitureBtn" class = "menubtn" onClick = "filter('Furniture')">Furniture</div>
+                        <div id = "interiorBtn" class = "menubtn" onClick = "filter('Interior')">Interior</div>
+                    </div>
+    
                 </div>
 
 
-                <div id="sustainabilityBtn" onClick = "goToSustainability()">
-                    Sustainability
+
+
+
+                <div id="sustainabilityBtnContainer">
+                    <div id = "sustainabilityBtn" class = "menubtn" onClick = "goToSustainability()">Sustainability</div>
                 </div>
-                <div id="aboutmeBtn" onClick = "goToInformation()">
-                    About Me
+                <div id="aboutmeBtnContainer">
+                    <div id = "aboutmeBtn" class = "menubtn" onClick = "goToInformation()">Information</div>
                 </div>
-                <div id="contactBtn" onClick = "goToInformation()">
-                    Contact
+                <div id="contactBtnContainer">
+                    <div id = "contactBtn" class = "menubtn" onClick = "goToContact()">Contact</div>
                 </div>
 
         
@@ -95,6 +103,8 @@
                 <div id = "startlogo">
                     <img id="startlogoLOGOimage" src="assets/logos/Face-OFF-WHITE.png">
                 </div>
+                <div id="landingpagedownarrow"><img src ="assets/icons/arrowdown.png" onClick ="goToHomePage()"></div>
+
     
             </section>
 
@@ -172,7 +182,12 @@
 
             <section id ="infopage">
                 <div id ="infopagecanvas" onwheel="infoScroll(event)">
+
+                    <div id = "infoXdiv" onClick="clickMoreInfo()"><img id="infoX" src="assets/icons/x.png"></div>
+
                     <div id = "infocontent">
+                        <div id="infooverlaybackground" onClick="clickMoreInfo()"></div>
+
                         <div id = "infoslideshowwrap" ></div>
                         <div id = "infoslideshowclicker" onClick ="clickMoreInfo()"></div>
 
@@ -379,66 +394,31 @@
 
 
 
-            ///////////////////   INFO PAGE SLIDESHOW
 
-            const amountOfInfoImages = 3
-
-
-            function displayInfoSlideshow () {
+            /////////////////  INIT LANDING PAGE ARROW
 
 
-                for (let i=0; i<amountOfInfoImages; i++ ) {
-                    document.getElementById("infoslideshowwrap").innerHTML += '<div class = "slideshowinfoimg" id = "slideshowinfoimg'+ i +'" ></div>';
-                    document.getElementById("slideshowinfoimg"+i).style.background = 'url("assets/info/info_'+i+'.jpg") no-repeat center';
-                    
-                    document.getElementById("slideshowinfoimg"+i).style.backgroundSize = 'cover';
-                    
+            function initLandingPageDownArrow () {
 
 
-                    if (i>0) {
-                        document.getElementById("slideshowImg"+i).style.opacity = '0%';
+                document.getElementById("landingpagedownarrow").style.transition = 'opacity, 0s';
+                document.getElementById("landingpagedownarrow").style.opacity = '0%';
 
-                    }
+                setTimeout(() => {
+                    document.getElementById("landingpagedownarrow").style.transition = 'opacity, 2s';
+                    document.getElementById("landingpagedownarrow").style.opacity = '100%'
+                } , 5000);
 
-                }
 
+
+                
             }
 
-            displayInfoSlideshow();
-
-            function changeInfoSlideshowImg (imgInfoID) {
-
-                for (let i=0; i<amountOfInfoImages; i++ ) {
+            initLandingPageDownArrow ();
 
 
 
-                    if (i == imgInfoID) {
 
-                        document.getElementById("slideshowinfoimg"+i).style.opacity = '100%'
-                        
-                    } else {
-                        document.getElementById("slideshowinfoimg"+i).style.opacity = '0%'
-
-                    }
-
-                }
-
-            }
-
-            var currentInfoSlide = 1;
-
-            function runInfoSlideshow () {
-                changeInfoSlideshowImg(currentInfoSlide);
-
-                if (currentInfoSlide < amountOfInfoImages-1) {
-                    currentInfoSlide++;
-                } else if (currentInfoSlide = amountOfInfoImages-1) {
-                    currentInfoSlide = 0;
-
-                }
-            }
-
-            setInterval(runInfoSlideshow, 3000);
 
 
 
@@ -508,58 +488,6 @@
 
 
 
-            //////////////   INFO SCROLL TO MAP
-
-            var transAmount = 0;
-            var transSpeed = (window.innerWidth/100)*1.5;
-            var mapEnabled = false;
-
-            function infoScroll(event) {
-
-                var y = event.deltaY;
-                var currentSize = event.target.style.width;
-                if (y > 60 && mapEnabled == false) {
-
-                    //console.log(Math.round(document.getElementById("moreinfotext").scrollTop), Math.round(document.getElementById("moreinfotext").scrollHeight)-document.getElementById("moreinfotext").offsetHeight);
-                    if(moreInfoOpen == true) {
-                        if (Math.round(document.getElementById("moreinfotext").scrollTop) == Math.round(document.getElementById("moreinfotext").scrollHeight)-document.getElementById("moreinfotext").offsetHeight) {
-
-                            document.getElementById("infocontent").style.transform = 'translate(-100%)';
-                            document.getElementById("infomap").style.transform = 'translate(-100%)';
-                            document.getElementById("infomaptext").style.transform = 'translate(-100%)';
-
-                            mapEnabled = true;
-                            //console.log(infoScrollPos);
-
-                        }
-
-                    } else if (moreInfoOpen == false) {
-                        document.getElementById("infocontent").style.transform = 'translate(-100%)';
-                        document.getElementById("infomap").style.transform = 'translate(-100%)';
-                        document.getElementById("infomaptext").style.transform = 'translate(-100%)';
-
-                        mapEnabled = true;
-
-
-                    }
-
-
-            
-
-
-                    //transAmount -= transSpeed;
-                } else if (y < 0 && mapEnabled == true){
-                    document.getElementById("infocontent").style.transform = 'translate(0%)';
-                    document.getElementById("infomap").style.transform = 'translate(100%)';
-                    document.getElementById("infomaptext").style.transform = 'translate(100%)';
-
-                    //transAmount += transSpeed;
-
-                    setTimeout(() => mapEnabled = false, 1500);
-
-
-                }
-            }
 
 
 
@@ -571,11 +499,21 @@
 
 
                 if (from == 'slide1') {
+
+                    console.log('from')
+
                     document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(0px)';
                     document.getElementById("homepagetext1").style.transform = 'translateY(0px)';
                     document.getElementById("homepageLOGO").style.transform = 'translateY(0px)';
                     document.getElementById("homepagetext2").style.transform = 'translateY(0px)';
                     document.getElementById("homepagedownarrow").style.transform = 'translateY(0px)';
+
+                    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
+                    document.getElementById("homepagetext1").style.transition = 'translate, 1s';
+                    document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
+                    document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
+                    document.getElementById("homepagedownarrow").style.transition = 'translate, 1.6s';
+
 
 
 
@@ -614,15 +552,6 @@
                     document.getElementById("homepagetext2").style.transition = 'translate, 0.8s';
                     document.getElementById("homepagedownarrow").style.transition = 'translate, 0.6s';
 
-
-                    
-                
-
-
-
-
-
-
                 }
 
 
@@ -647,6 +576,10 @@
     <script src="./images.js"></script>
     <script src="./info.js"></script>
     <script src="./sustainability.js"></script>
+
+    <script src="./menu.js"></script>
+
+
 
 
 

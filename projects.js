@@ -678,6 +678,7 @@ function clickinfoSlider () {
 /////////////////   FILTER
 
 
+var projectsSelected = true;
 
 
 function filter (catagory) {
@@ -703,7 +704,10 @@ function filter (catagory) {
     var filtDisTop = 130;
 
     if (catagory == 'all') {
-        console.log('all',projectsDisTop[0] )
+        console.log('all',projectsDisTop[0] );
+
+        projectsSelected = true;
+
         for (let i=0; i < projectList.numberOfProjects; i++) {
 
 
@@ -738,59 +742,62 @@ function filter (catagory) {
 
     } else {
 
+        projectsSelected = false;
+
+
         clickMenu ();
 
 
 
-    for (let i=0; i < projectList.numberOfProjects; i++) {
+        for (let i=0; i < projectList.numberOfProjects; i++) {
 
 
-        if (catagory !== projectList.projects[i].type) {
+            if (catagory !== projectList.projects[i].type) {
 
-            document.getElementById("project" + i).style.opacity = '00%';
+                document.getElementById("project" + i).style.opacity = '00%';
 
-            document.getElementById("project" + i).style.top = filtDisTop - window.innerHeight + 'px';//projectsDisTop[i] +'px';
+                document.getElementById("project" + i).style.top = filtDisTop - window.innerHeight + 'px';//projectsDisTop[i] +'px';
 
-            document.getElementById("projectThumbImg"+ i).style.pointerEvents = 'none';
-            document.getElementById("project"+ i).style.pointerEvents = 'none';
-
-
-
-
-        } else {
-
-
-            
-            document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
-            document.getElementById("project" + i).style.opacity = '100%';
-            document.getElementById("project" + i).style.top = filtDisTop +'px';
-
-            document.getElementById("projectThumbImg"+ i).style.pointerEvents = 'auto';
-            document.getElementById("project"+ i).style.pointerEvents = 'auto';
+                document.getElementById("projectThumbImg"+ i).style.pointerEvents = 'none';
+                document.getElementById("project"+ i).style.pointerEvents = 'none';
 
 
 
 
-            //filtDisTop += window.innerWidth/2.3;
-
-            if (projectList.projects[i].position == 'full') {
+            } else {
 
 
-                filtDisTop = filtDisTop+ window.innerWidth/2 //550;
+                
+                document.getElementById("project" + i).style.transition = 'opacity 1s, top 1s cubic-bezier(0.0, 0.5, 0.5 ,1.0)';
+                document.getElementById("project" + i).style.opacity = '100%';
+                document.getElementById("project" + i).style.top = filtDisTop +'px';
+
+                document.getElementById("projectThumbImg"+ i).style.pointerEvents = 'auto';
+                document.getElementById("project"+ i).style.pointerEvents = 'auto';
 
 
 
-            } else if (projectList.projects[i].position == 'right' || projectList.projects[i].position == 'left') {
 
-                filtDisTop = filtDisTop+ window.innerWidth/3 //300;
+                //filtDisTop += window.innerWidth/2.3;
+
+                if (projectList.projects[i].position == 'full') {
+
+
+                    filtDisTop = filtDisTop+ window.innerWidth/2 //550;
+
+
+
+                } else if (projectList.projects[i].position == 'right' || projectList.projects[i].position == 'left') {
+
+                    filtDisTop = filtDisTop+ window.innerWidth/3 //300;
+
+
+                }
+
 
 
             }
-
-
-
         }
-    }
 
 
         console.log(filtDisTop);
