@@ -1201,8 +1201,7 @@ section {
 
     height:50%;
 
-    overflow: scroll;
-
+    overflow: hidden;
 
     pointer-events: none;
 

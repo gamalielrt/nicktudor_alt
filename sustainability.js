@@ -14,6 +14,9 @@ function displaySusOverlay () {
 
         document.getElementById("susXdiv").style.opacity = '100%';
 
+        document.getElementById("sustext").style.overflow = 'scroll';
+
+
         setTimeout(() => {
             document.getElementById("sustainoverlaygif").style.opacity = '100%';
 
@@ -63,6 +66,9 @@ function displaySusOverlay () {
         document.getElementById("sustainoverlaygif").style.opacity = '0%';
 
         document.getElementById("susXdiv").style.opacity = '0%';
+
+        document.getElementById("sustext").style.overflow = 'none';
+
 
         document.getElementById("sustext").style.pointerEvents = 'none';
         document.getElementById("susoverlaybackground").style.pointerEvents = 'none';

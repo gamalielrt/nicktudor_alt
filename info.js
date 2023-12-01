@@ -26,6 +26,9 @@ function clickMoreInfo () {
 
         document.getElementById("moreinfotext").scrollTop = '0';
 
+        document.getElementById("moreinfotext").style.overflow = 'scroll';
+
+
         document.getElementById("infoslideshowclicker").style.pointerEvents = 'none';
         document.getElementById("infooverlaybackground").style.pointerEvents = 'auto';
 
@@ -81,6 +84,9 @@ function clickMoreInfo () {
         document.getElementById("infoXdiv").style.opacity = '0%';
         document.getElementById("infoslideshowclicker").style.pointerEvents = 'all';
         document.getElementById("infooverlaybackground").style.pointerEvents = 'none';
+
+        document.getElementById("moreinfotext").style.overflow = 'none';
+
 
 
 
