@@ -14,6 +14,13 @@ function clickMoreInfo () {
 
         canSwipe = false;
 
+        document.getElementById("infocontent").style.transform = 'translate(0%)';
+        document.getElementById("infomap").style.transform = 'translate(100%)';
+        document.getElementById("infomaptext").style.transform = 'translate(100%)';
+
+        mapEnabled = false;
+
+
         document.getElementById("header").style.transform = 'translateY(-120px)';
         document.getElementById("infoXdiv").style.opacity = '100%';
 

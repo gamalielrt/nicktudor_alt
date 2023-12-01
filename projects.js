@@ -260,14 +260,14 @@ var loadMoreClicked = false;
 
 function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput) {
 
-    if (deviceType == "computer" || window.innerWidth > 550) {
+    /*if (deviceType == "computer" || window.innerWidth > 550) {
         //console.log('device is computer');
 
         projectscontainer.style.width = '100%';
         projectscontainer.style.margin = 'auto';
 
 
-    }
+    }*/
 
     //if (projectsToDisplaystart == 0) {
 
@@ -293,7 +293,9 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
         
 
-        if (deviceType.includes("computer") || window.innerWidth > 550) {
+        //if (deviceType.includes("computer") || window.innerWidth > 550) {
+
+            console.log('computer projects');
 
             if (i>0) {
 
@@ -431,7 +433,7 @@ function displayProjects(projectsToDisplaystart, projectsToDisplay, disTopInput)
 
 
 
-        }
+        //}
 
     }
 

@@ -55,7 +55,7 @@
                     <div id = "sustainabilityBtn" class = "menubtn" onClick = "goToSustainability()">Sustainability</div>
                 </div>
                 <div id="aboutmeBtnContainer">
-                    <div id = "aboutmeBtn" class = "menubtn" onClick = "goToInformation()">Information</div>
+                    <div id = "aboutmeBtn" class = "menubtn" onClick = "goToInformation()">About</div>
                 </div>
                 <div id="contactBtnContainer">
                     <div id = "contactBtn" class = "menubtn" onClick = "goToContact()">Contact</div>
@@ -111,10 +111,10 @@
 
             <section id ="homepage">
                 <div id ="homepagecontent" class = "card">
-                    <div id="homepageNICKTUDOR"><img id="homepageNICKTUDORimage" src="assets/logos/NICK-TUDOR-RED.png"></div><br>
-                    <p id = "homepagetext1">I’m a carpenter based between London and Essex, designing and making bespoke furniture, buildings and architectural features. I favour clean, functional forms that promote the materials I use, and to highlight the ornamentation I employ sparingly.</p> 
-                    <div id="homepageLOGO"><img id="homepageLOGOimage" src="assets/logos/FACE-RED.png"></div>
-                    <p id = "homepagetext2">It’s important to me that my work reflects the character of its surroundings, and I value the privilege to work within context of a persons life. I want to create sustainable outcomes of lasting quality; to contribute positive change to the built environment. </p>
+                    <!--<div id="homepageNICKTUDOR"><img id="homepageNICKTUDORimage" src="assets/logos/NICK-TUDOR-RED.png"></div><br>-->
+                    <p id = "homepagetext1">Nick Tudor is a carpenter based between London and the Essex countryside. He designs and makes bespoke furniture, buildings and architectural features. His work is designed to reflect the character of its surroundings and the people that use it, using sustainable materials and an inventive approach that is both meticulous and playful.</p> 
+                    <!--<div id="homepageLOGO"><img id="homepageLOGOimage" src="assets/logos/FACE-RED.png"></div>-->
+                    <!--<p id = "homepagetext2">It’s important to me that my work reflects the character of its surroundings, and I value the privilege to work within context of a persons life. I want to create sustainable outcomes of lasting quality; to contribute positive change to the built environment. </p>-->
                     <div id="homepagedownarrow"><img src ="assets/icons/arrowdown.png" onClick ="goToProjects ()"></div>
                 </div>
     
@@ -207,7 +207,7 @@
 
                     <div id ="infocontent2">
                         <div id = "infomap">
-                            <img id = "infomapimg" src="assets/info/map.svg">
+                            <img id = "infomapimg" src="assets/info/map-301123.svg">
                         </div>
                         <div id = "infomaptext">
                             <div id="infotextblock1">To discuss a project, idea or an order, please get in touch. 
@@ -295,7 +295,7 @@
                 //console.log(deviceType);
             }
 
-            detectScreenWidth();
+           //detectScreenWidth();
 
 
 
@@ -502,16 +502,16 @@
 
                     console.log('from')
 
-                    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(0px)';
+                    //document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(0px)';
                     document.getElementById("homepagetext1").style.transform = 'translateY(0px)';
-                    document.getElementById("homepageLOGO").style.transform = 'translateY(0px)';
-                    document.getElementById("homepagetext2").style.transform = 'translateY(0px)';
+                    //document.getElementById("homepageLOGO").style.transform = 'translateY(0px)';
+                    //document.getElementById("homepagetext2").style.transform = 'translateY(0px)';
                     document.getElementById("homepagedownarrow").style.transform = 'translateY(0px)';
 
-                    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
+                    //document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
                     document.getElementById("homepagetext1").style.transition = 'translate, 1s';
-                    document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
-                    document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
+                    //document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
+                    //document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
                     document.getElementById("homepagedownarrow").style.transition = 'translate, 1.6s';
 
 
@@ -520,17 +520,17 @@
                 }
 
                 if (from == 'slide0') {
-                    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(300px)';
+                    //document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(300px)';
                     document.getElementById("homepagetext1").style.transform = 'translateY(300px)';
-                    document.getElementById("homepageLOGO").style.transform = 'translateY(300px)';
-                    document.getElementById("homepagetext2").style.transform = 'translateY(300px)';
+                    //document.getElementById("homepageLOGO").style.transform = 'translateY(300px)';
+                    //document.getElementById("homepagetext2").style.transform = 'translateY(300px)';
                     document.getElementById("homepagedownarrow").style.transform = 'translateY(300px)';
 
 
-                    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
+                    //document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
                     document.getElementById("homepagetext1").style.transition = 'translate, 1s';
-                    document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
-                    document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
+                    //document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
+                    //document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
                     document.getElementById("homepagedownarrow").style.transition = 'translate, 1.6s';
 
 
@@ -540,16 +540,16 @@
 
                 if (from == 'slide2') {
                     document.getElementById("homepagetext1").style.transform = 'translateY(-300px)';
-                    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(-300px)';
-                    document.getElementById("homepagetext2").style.transform = 'translateY(-300px)';
-                    document.getElementById("homepageLOGO").style.transform = 'translateY(-300px)';
+                    //document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(-300px)';
+                    //document.getElementById("homepagetext2").style.transform = 'translateY(-300px)';
+                    //document.getElementById("homepageLOGO").style.transform = 'translateY(-300px)';
                     document.getElementById("homepagedownarrow").style.transform = 'translateY(-300px)';
 
 
-                    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 1.4s';
+                    //document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 1.4s';
                     document.getElementById("homepagetext1").style.transition = 'translate, 1.2s';
-                    document.getElementById("homepageLOGO").style.transition = 'translate, 1s';
-                    document.getElementById("homepagetext2").style.transition = 'translate, 0.8s';
+                    //document.getElementById("homepageLOGO").style.transition = 'translate, 1s';
+                    //document.getElementById("homepagetext2").style.transition = 'translate, 0.8s';
                     document.getElementById("homepagedownarrow").style.transition = 'translate, 0.6s';
 
                 }

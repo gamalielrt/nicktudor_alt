@@ -10,7 +10,7 @@ function clickProjects () {
     if (pSubMenuOpen == false) {
         pSubMenuOpen = true;
         document.getElementById("projectsBtnContainer").style.height = '30%';
-        document.getElementById("menu").style.paddingTop = '15%';
+        document.getElementById("menu").style.paddingTop = '8%';
 
         setTimeout(()=> {document.getElementById("architectureBtn").style.opacity = '100%';},0);
         setTimeout(()=> {document.getElementById("artBtn").style.opacity = '100%';},100);
@@ -29,7 +29,7 @@ function clickProjects () {
         pSubMenuOpen = false;
 
         document.getElementById("projectsBtnContainer").style.height = '15%';
-        document.getElementById("menu").style.paddingTop = '20%';
+        document.getElementById("menu").style.paddingTop = '10%';
 
         setTimeout(()=> {document.getElementById("architectureBtn").style.opacity = '0%';},800);
         setTimeout(()=> {document.getElementById("artBtn").style.opacity = '0%';},500);
@@ -47,8 +47,25 @@ function clickProjects () {
     }
 
 
+}
 
 
+
+
+/////////////    SUBMENU LINEHEIGHT
+
+function subMenuLineHeight () {
+
+
+    if (window.innerHeight <= 800) {
+
+        console.log(window.innerHeight);
+
+        document.getElementById("projectcatagorybtns").style.lineHeight = (Math.floor(window.innerHeight - 549)/250) + 1;
+
+    }
 
 
 }
+
+subMenuLineHeight();

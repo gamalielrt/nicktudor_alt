@@ -361,17 +361,17 @@ function goToLandingPage () {
     document.getElementById("slideshowdiv").style.display = 'block';
     document.getElementById("header").style.opacity = '0%';
 
-    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(300px)';
+    //document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(300px)';
     document.getElementById("homepagetext1").style.transform = 'translateY(300px)';
-    document.getElementById("homepageLOGO").style.transform = 'translateY(300px)';
-    document.getElementById("homepagetext2").style.transform = 'translateY(300px)';
+    //document.getElementById("homepageLOGO").style.transform = 'translateY(300px)';
+    //document.getElementById("homepagetext2").style.transform = 'translateY(300px)';
     document.getElementById("homepagedownarrow").style.transform = 'translateY(300px)';
 
 
-    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
+    //document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 0.8s';
     document.getElementById("homepagetext1").style.transition = 'translate, 1s';
-    document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
-    document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
+    //document.getElementById("homepageLOGO").style.transition = 'translate, 1.2s';
+    //document.getElementById("homepagetext2").style.transition = 'translate, 1.4s';
     document.getElementById("homepagedownarrow").style.transition = 'translate, 1.6s';
 
 
@@ -409,16 +409,16 @@ function goToProjects () {
     gsap.to(".content", {y:current, duration: 1, ease: "power4"});
 
     document.getElementById("homepagetext1").style.transform = 'translateY(-300px)';
-    document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(-300px)';
-    document.getElementById("homepagetext2").style.transform = 'translateY(-300px)';
-    document.getElementById("homepageLOGO").style.transform = 'translateY(-300px)';
+    //document.getElementById("homepageNICKTUDOR").style.transform = 'translateY(-300px)';
+    //document.getElementById("homepagetext2").style.transform = 'translateY(-300px)';
+    //document.getElementById("homepageLOGO").style.transform = 'translateY(-300px)';
     document.getElementById("homepagedownarrow").style.transform = 'translateY(-300px)';
 
 
-    document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 1.4s';
+    //document.getElementById("homepageNICKTUDOR").style.transition = 'translate, 1.4s';
     document.getElementById("homepagetext1").style.transition = 'translate, 1.2s';
-    document.getElementById("homepageLOGO").style.transition = 'translate, 1s';
-    document.getElementById("homepagetext2").style.transition = 'translate, 0.8s';
+    //document.getElementById("homepageLOGO").style.transition = 'translate, 1s';
+    //document.getElementById("homepagetext2").style.transition = 'translate, 0.8s';
     document.getElementById("homepagedownarrow").style.transition = 'translate, 0.6s';
 
     displayHeader();
