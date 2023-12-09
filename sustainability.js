@@ -67,7 +67,7 @@ function displaySusOverlay () {
 
         document.getElementById("susXdiv").style.opacity = '0%';
 
-        document.getElementById("sustext").style.overflow = 'none';
+        document.getElementById("sustext").style.overflow = 'hidden';
 
 
         document.getElementById("sustext").style.pointerEvents = 'none';

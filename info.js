@@ -32,6 +32,12 @@ function clickMoreInfo () {
         document.getElementById("infoslideshowclicker").style.pointerEvents = 'none';
         document.getElementById("infooverlaybackground").style.pointerEvents = 'auto';
 
+        setTimeout(() => {
+            document.getElementById("infotainoverlaygif").style.opacity = '100%';
+
+          }, "1000");
+
+
 
 
 
@@ -88,6 +94,7 @@ function clickMoreInfo () {
         document.getElementById("moreinfotext").style.overflow = 'none';
 
 
+        document.getElementById("infotainoverlaygif").style.opacity = '0%';
 
 
 

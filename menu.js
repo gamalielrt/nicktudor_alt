@@ -9,7 +9,7 @@ function clickProjects () {
     filter ('all');
     if (pSubMenuOpen == false) {
         pSubMenuOpen = true;
-        document.getElementById("projectsBtnContainer").style.height = '30%';
+        document.getElementById("projectsBtnContainer").style.height = '34%';
         document.getElementById("menu").style.paddingTop = '8%';
 
         setTimeout(()=> {document.getElementById("architectureBtn").style.opacity = '100%';},0);

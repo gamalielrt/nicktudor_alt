@@ -201,6 +201,14 @@
 
 
                         </div>
+
+                        <div id ="infooverlaygifwrap">
+                            <img id = "infotainoverlaygif" src = "assets/logos/woodshaving.gif">
+
+                        </div>
+
+
+
                        <!-- <div id="infodownarrow" onClick="clickMoreInfo()"><img src ="assets/icons/arrowdown.png"></div>-->
 
                     </div>
@@ -212,15 +220,18 @@
                         <div id = "infomaptext">
                             <div id="infotextblock1">To discuss a project, idea or an order, please get in touch. 
                                 Please note that lead-times are approximately 6-8 weeks from time of order.</div>
+                                <br>
                             <div id="infotextblock2">a: The Cowshed, <br>
                                   Wallums Farm,<br>
                                   Maldon Road, <br>
                                   Bradwell-on-Sea,<br>
                                   Essex,<br>
                                   CM0 7HR</div>
+                                  <br>
                             <div id="infotextblock3">e: info@nick-tudor.com<br>
                                 t: +44 (0) 7769 553127<br>
                                 i: @nick_tudor</div>
+                                <br>
                             <div id="infotextblock4">© Nick Tudor 2024<br>
                                 Identity: Leomi Sadler<br>
                                 Website: Gamaliel Rendle Traynor</div>
@@ -263,50 +274,78 @@
 
             var deviceType = ''; 
 
-            function detectScreenWidth () {
-                /*if (window.innerWidth > 550) {
-                    deviceType = 'computer';
-                    homepagecontent.style.fontSize = '19px'
-                    homepagecontent.style.paddingTop = '12%';
-                    homepagecontent.style.paddingLeft = '26%';
-                    homepagecontent.style.paddingRight = '26%';
-
-                    document.getElementById("homepageNICKTUDORimage").style.width = '150px';
-                    document.getElementById("homepageLOGOimage").style.width = '140px';
-                    document.getElementById("menubarlogo").style.width = '150px';
 
 
 
-                } else {
-                    deviceType = 'phone';
-                    homepagecontent.style.fontSize = '14px'
-                    homepagecontent.style.paddingTop = '20%';
-                    homepagecontent.style.paddingLeft = '20%';
-                    homepagecontent.style.paddingRight = '20%';
+            /////////////  MOBILE FORMATTING
 
 
-                    document.getElementById("homepageNICKTUDORimage").style.width = '150px';
-                    document.getElementById("homepageLOGOimage").style.width = '100px';
-                    document.getElementById("menubarlogo").style.width = '140px';
+            function formatTextWidth () {
+                if (window.innerWidth < 650) {
+
+                    document.getElementById("homepagetext1").style.width = '65%';
+                    document.getElementById("homepagecontent").style.width = '65%';
+                    document.getElementById("homepagedownarrow").style.width = '65%';
+
+
+                    document.getElementById("homepagetext1").style.fontSize = '23px'
+                    document.getElementById("homepagetext1").style.top = '20%';
+
+
+                    document.getElementById("sustext").style.width = '65%';
+                    document.getElementById("sustext").style.left = '17.5%';
+
+                    document.getElementById("sustextheader").style.fontSize = '28px';
+                    document.getElementById("sustextp1").style.fontSize = '23px';
+                    document.getElementById("sustextp2").style.fontSize = '23px';
+                    document.getElementById("sustextp3").style.fontSize = '23px';
+                    document.getElementById("sustextp4").style.fontSize = '23px';
+
+                    document.getElementById("sustainoverlaygif").style.height = '60vh';
+
+                    document.getElementById("moreinfotext").style.width = '65%';
+                    document.getElementById("moreinfotext").style.left = '17.5%';
+
+                    document.getElementById("infotainoverlaygif").style.height = '20vh';
+
+
+                    document.getElementById("infomapimg").style.width = '100%';
+
+                    document.getElementById("infomaptext").style.display = 'block';
+                    document.getElementById("infomaptext").style.left = '15%';
+
+                    document.getElementById("infomap").style.height = '55%';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+
+
+
 
 
                 }
-                */
-                //console.log(deviceType);
             }
 
-           //detectScreenWidth();
+            formatTextWidth();
 
 
 
-            ///////////////////   HAMBURGER ANIMATION
 
-
-            //$(document).ready(function(){
-            //    $('#hamburgericon').click(function(){
-            //        $(this).toggleClass('open');
-            //    });
-            //});
 
 
             function clickMenu () {
